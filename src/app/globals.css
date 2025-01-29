@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --text-color: #000;
+  --background-color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--background-color);
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.akme-container {
+  margin: 0;
+  margin-top: 4rem;
+  padding: 0;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.work-image-cont img {
+  max-height: 100vh;
+  width: auto;
+}
+
+.svg-color {
+  color: var(--text-color); /* Inherits color from text */
+  fill: currentColor; /* Uses current text color for fill */
+  stroke: currentColor; /* Uses current text color for stroke, if needed */
+}
