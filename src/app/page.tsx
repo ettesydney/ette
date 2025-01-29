@@ -2,8 +2,7 @@
 import { client } from '@/sanity/lib/client';
 import { HOMEPAGE_QUERY } from '@/sanity/lib/queries';
 import { HomepageData } from '@/types/homepage';
-import HeaderText from '@/app/components/HeaderText'
-import ImageSlider from '@/app/components/imageSlider'
+
 
 
 export default async function Home() {
@@ -11,8 +10,7 @@ export default async function Home() {
 
   return (
     <div className="home w-full h-screen bg-black bg-center">
-      <HeaderText text="My Homepage" /> {/* Set header text */}
-      <ImageSlider images={homepageData.imageGallery} />
+     <h1>hello</h1>
     </div>
   );
 }
