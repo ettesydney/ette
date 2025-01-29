@@ -3,8 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
-import { HeaderProvider } from "./context/HeaderContext";
-import ThemeProvider from "./providers/themeProvider";
+
 
 
 
@@ -34,14 +33,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
-        <ThemeProvider />
-        <HeaderProvider>
-          <Header />
-          <div className="akme-container mt-16">
+
+          {/* <Header /> */}
+          <div>
             {children}
           </div>
-          <Footer />
-        </HeaderProvider>
+          {/* <Footer /> */}
       </body>
     </html>
   );
