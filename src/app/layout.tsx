@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import ViewportFix from "./components/viewportFix";
 
 
 
@@ -30,15 +31,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
-      >
-
-          {/* <Header /> */}
-          <div>
-            {children}
-          </div>
-          {/* <Footer /> */}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased `}>
+      <ViewportFix />
+        {/* <Header /> */}
+          {children}
+        {/* <Footer /> */}
       </body>
     </html>
   );

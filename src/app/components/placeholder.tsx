@@ -16,8 +16,8 @@ export default function PlaceHolder() {
             <Image src={etteLogo} alt="ette Logo" width={500} height={300} objectFit="contain" />
           </div>
           <div>
-            <p className="text-lg mt-2 uppercase">Opening Soon</p>
-            <p className="text-lg uppercase">10 Bridge St. Sydney 2000</p>
+            <p className="lg:text-lg mt-2 uppercase">Opening Soon</p>
+            <p className="lg:text-lg uppercase">10 Bridge St. Sydney 2000</p>
           </div>
         </div>
       </div>

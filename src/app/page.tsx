@@ -9,7 +9,7 @@ export default async function Home() {
   const homepageData: HomepageData = await client.fetch(HOMEPAGE_QUERY);
 
   return (
-    <div className="home w-full h-screen">
+    <div className="home w-full min-h-[var(--vh)]">
      <PlaceHolder />
     </div>
   );
