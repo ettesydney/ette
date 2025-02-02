@@ -4,14 +4,22 @@ import { useEffect } from "react";
 export default function ViewportFix() {
   useEffect(() => {
     const setViewportHeight = () => {
-      document.documentElement.style.setProperty("--vh", `${window.innerHeight}px`);
+      requestAnimationFrame(() => {
+        document.documentElement.style.setProperty("--vh", `${window.innerHeight}px`);
+      });
     };
 
-    setViewportHeight();
+    setViewportHeight(); // Initial setting
     window.addEventListener("resize", setViewportHeight);
 
-    return () => window.removeEventListener("resize", setViewportHeight);
+    // Ensure images are loaded before final adjustment
+    window.addEventListener("load", setViewportHeight);
+
+    return () => {
+      window.removeEventListener("resize", setViewportHeight);
+      window.removeEventListener("load", setViewportHeight);
+    };
   }, []);
 
-  return null; // This component does not render anything, just runs the effect
+  return null;
 }
