@@ -4,7 +4,7 @@ import etteLogo from '../../../public/Ette_Logo_Pink.png';
 
 export default function PlaceHolder() {
   return (
-    <div className="min-h-[var(--vh)] flex flex-col justify-between items-center relative text-primary p-4">
+    <div className="h-dvh flex flex-col justify-between items-center relative text-primary p-4">
       {/* Centered Content */}
       <div className="container mx-auto grid grid-cols-12 gap-4 flex-grow text-center items-center lg:pb-12">
         {/* Main Content (Offset on Large Screens) */}

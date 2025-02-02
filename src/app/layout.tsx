@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
-import ViewportFix from "./components/viewportFix";
 
 
 export const metadata: Metadata = {
@@ -19,7 +18,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={'antialiased'}>
-      <ViewportFix />
         {/* <Header /> */}
           {children}
         {/* <Footer /> */}
