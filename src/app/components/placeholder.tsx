@@ -18,9 +18,15 @@ export default function PlaceHolder() {
               className="object-contain h-72 sm:h-72 md:h-80 lg:h-auto xl:h-auto" 
               />
             </div>
-          <div className="w-full h-auto relative flex justify-center items-center">
-            <Image src={etteLogo} alt="ette Logo" width={500} height={300} objectFit="contain" />
-          </div>
+            <div className="w-full h-auto relative flex justify-center items-center">
+            <Image 
+              src={etteLogo} 
+              alt="ette Logo" 
+              width={500} 
+              height={300} 
+              className="object-contain h-28 sm:h-48 md:h-60 lg:h-auto xl:h-auto" 
+            />
+            </div>
           <div>
             <p className="lg:text-lg mt-2 uppercase">Opening Soon</p>
             <p className="lg:text-lg uppercase">10 Bridge St. Sydney 2000</p>
