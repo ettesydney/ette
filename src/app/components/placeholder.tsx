@@ -37,10 +37,10 @@ export default function PlaceHolder() {
       {/* Bottom Buttons */}
       <div className="w-full grid grid-cols-12 absolute bottom-4 left-0 px-4 uppercase">
         <div className="col-span-1 lg:col-span-1 col-span-6">
-          <a>Subscribe</a>
+          <a href='https://www.sevenrooms.com/explore/ette/subscription' target='_blank'>Subscribe</a>
         </div>
         <div className="lg:col-start-11 lg:col-span-2 col-span-6 text-right">
-          <a className="uppercase">@ettesydney</a>
+          <a href='https://www.instagram.com/ette.sydney/#' target='_blank' className="uppercase">@ette.sydney</a>
         </div>
       </div>
     </div>
