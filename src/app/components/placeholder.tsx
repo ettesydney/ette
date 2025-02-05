@@ -1,26 +1,28 @@
 import Image from 'next/image';
 import tomatoes from '../../../public/tomatoes.png';
+import image from '../../../public/ETTE_WEB2.jpg';
 import etteLogo from '../../../public/Ette_Logo_Pink.png';
+import etteLogoSyd from '../../../public/Ette_Logo_Sydney_Pink.png';
 
 export default function PlaceHolder() {
   return (
     <div className="h-dvh flex flex-col justify-between items-center relative text-primary p-4">
       {/* Centered Content */}
-      <div className="container mx-auto grid grid-cols-12 gap-4 flex-grow text-center items-center lg:pb-12">
+      <div className="mx-auto grid grid-cols-12 gap-4 flex-grow text-center items-center lg:pb-12">
         {/* Main Content (Offset on Large Screens) */}
-        <div className="col-span-12 lg:col-start-5 lg:col-span-4 flex flex-col items-center justify-center gap-16">
+        <div className="col-span-12 lg:col-start-4 lg:col-span-6 flex flex-col items-center justify-center gap-8 lg:gap-16">
             <div className="w-full h-auto relative flex justify-center items-center">
               <Image 
-              src={tomatoes} 
+              src={image} 
               alt="Placeholder Image" 
-              width={300} 
-              height={300} 
+              height={380} 
+              width={290} 
               className="object-contain h-72 sm:h-72 md:h-80 lg:h-auto xl:h-auto" 
               />
             </div>
-            <div className="w-full h-auto relative flex justify-center items-center">
+            <div className="w-full h-auto relative flex justify-center items-center mt-8">
             <Image 
-              src={etteLogo} 
+              src={etteLogoSyd} 
               alt="ette Logo" 
               width={500} 
               height={300} 
@@ -28,8 +30,8 @@ export default function PlaceHolder() {
             />
             </div>
           <div>
-            <p className="lg:text-lg mt-2 uppercase">Opening Soon</p>
-            <p className="lg:text-lg uppercase">10 Bridge St. Sydney 2000</p>
+            <p className="lg:text-lg mb-8 uppercase"> An intimate bar and restaurant nestled in the heart of the city, <br/> with a changing menu guided by quality produce and honest flavours.</p>
+            <p className="lg:text-lg uppercase">Opening Late March</p>            
           </div>
         </div>
       </div>
