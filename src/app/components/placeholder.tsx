@@ -20,7 +20,7 @@ export default function PlaceHolder() {
               className="object-contain h-72 sm:h-72 md:h-80 lg:h-auto xl:h-auto" 
               />
             </div>
-            <div className="w-full h-auto relative flex justify-center items-center mt-8">
+            <div className="w-full h-auto relative flex justify-center items-center mt-0 lg:mt-8">
             <Image 
               src={etteLogoSyd} 
               alt="ette Logo" 
