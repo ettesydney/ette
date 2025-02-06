@@ -29,11 +29,11 @@ export default function PlaceHolder() {
           <a href='https://www.sevenrooms.com/explore/ette/subscription' target='_blank'>Subscribe</a>
         </div>
         <div className="lg:col-start-11 lg:col-span-2 col-span-6 text-right flex items-center justify-end gap-2">
-          <a href="#">
+          <a href="https://www.facebook.com/people/Ette-Sydney/61571689880671/" target='_blank'>
             <Image src={facebook} alt="Facebook" width={20} height={20} className="fill-current text-primary" />
           </a>
-          <a href="https://www.instagram.com/ette.sydney/#" target='_blank'>
-            <Image src={instagram} alt="Instagram" width={20} height={20} className="fill-current text-primary" />
+          <a href="https://www.instagram.com/ette.sydney/#" target='_blank' className='ml-4'>
+            <Image src={instagram} alt="Instagram" width={22} height={22} className="fill-current text-primary" />
           </a>
         </div>
       </div>
