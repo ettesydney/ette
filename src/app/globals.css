@@ -50,3 +50,9 @@ html, body {
   fill: currentColor;
   stroke: currentColor;
 }
+
+
+.custom-box-border {
+  border: 1px solid var(--primary);
+  padding: 2px
+}
