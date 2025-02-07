@@ -2,14 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Font Import */
+@font-face {
+  font-family: 'MaisonNeueExtended';
+  src: url('/fonts/MaisonNeueExtendedWEB-Book.woff2') format('woff2'),
+       url('/fonts/MaisonNeueExtendedWEB-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Root Variables */
 :root {
   --background: #ffffff;
   --foreground: #171717;
   --text-color: #000;
   --background-color: #fff;
   --bg-primary: #352E2E;
-  --primary: #FCE6F1;
-  --primary-light: #FDF2F8;
+  --primary: #fce7f2;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,11 +28,17 @@
   }
 }
 
-body {
-  color: var(--text-color);
-  background-color: var(--background-color);
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
-  font-family: Arial, Helvetica, sans-serif;
+/* Apply Custom Font */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'MaisonNeueExtended', Arial, Helvetica, sans-serif;
+  letter-spacing: 0.2em;
+  font-size: 0.9em;
+
 }
 
 .home {
@@ -31,7 +46,13 @@ body {
 }
 
 .svg-color {
-  color: var(--text-color); /* Inherits color from text */
-  fill: currentColor; /* Uses current text color for fill */
-  stroke: currentColor; /* Uses current text color for stroke, if needed */
+  color: var(--text-color);
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+
+.custom-box-border {
+  border: 1px solid var(--primary);
+  padding: 2px
 }
