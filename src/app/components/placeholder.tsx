@@ -25,7 +25,7 @@ export default function PlaceHolder() {
       </div>
       
       <div className="w-full grid grid-cols-12 absolute bottom-4 left-0 px-4 uppercase">
-        <div className="col-span-1 lg:col-span-1 col-span-6 text-center">
+        <div className="lg:col-span-2 col-span-6 text-center">
           <div className='custom-box-border'>
 
           <a href='https://www.sevenrooms.com/explore/ette/subscription' target='_blank'>Join the Family</a>
