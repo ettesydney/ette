@@ -1,15 +1,16 @@
-"use client";
 
-import { usePathname } from "next/navigation";
+'use client';
+
+import { useAtom } from 'jotai';
+import { siteInformation } from '@/store/siteInformation';
 
 export default function Footer() {
-  const pathname = usePathname();
+  const [siteData] = useAtom(siteInformation);
 
-  // Conditionally apply the 'absolute' class only on the root path
-  const footerClass = pathname === "/" ? "absolute" : "";
+  console.log('***', siteData, '***')
 
   return (
-    <footer className={`${footerClass} bottom-0 w-full z-10 p-4`}>
+    <footer className="bottom-0 w-full z-10 p-4">
       <div className="grid grid-cols-12 items-center gap-4">
         {/* Project Inquiries */}
        FOOTER

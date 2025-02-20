@@ -1,46 +1,103 @@
-// ./src/sanity/lib/queries.ts
-
-export const POSTS_QUERY = `*[_type == "post"]{
-  _id,
-  title,
-  slug,
-  mainImage {
-    alt,
+export const HOMEPAGE_QUERY = `*[_type == "home"][0] {
+  logo {
     asset-> {
       url
-    }
-  }
+    },
+    alt
+  },
+  primaryImage {
+    asset-> {
+      url
+    },
+    alt
+  },
+  mobileImage {
+    asset-> {
+      url
+    },
+    alt
+  },
+  blurb
 }`;
 
-export const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
-  _id,
-  title,
-  slug,
-  mainImage {
-    alt,
+export const ABOUT_QUERY = `*[_type == "about"][0] {
+  image {
     asset-> {
       url
     }
   },
-  body,
-  imageGallery[] {
-    alt,
-    position,
-    _key,
-    image {
-      asset-> {
-        url
-      }
+  title,
+  blurb
+}`;
+
+export const MENU_QUERY = `*[_type == "menu"][0] {
+  title,
+  menuBlurb,
+  sections[] {
+    title,
+    items
+  },
+  drinksMenu {
+    asset-> {
+      url
     }
   }
 }`;
 
-export const HOMEPAGE_QUERY = `*[_type == "home"][0]{
-  title,
-  imageGallery[]{
-    asset->{
-      url
-    },
-    alt
+export const FUNCTIONS_QUERY = `*[_type == "functions"][0] {
+  sections[] {
+    title,
+    blurb,
+    callToAction,
+    images[] {
+      asset-> {
+        url
+      },
+      alt
+    }
   }
+}`;
+
+export const WHATS_ON_QUERY = `*[_type == "whatsOn"][0] {
+  title,
+  blurb,
+  events[] {
+    date,
+    title,
+    blurb,
+    image {
+      asset-> {
+        url
+      },
+      alt
+    },
+    callToAction
+  }
+}`;
+
+
+export const GENERIC_QUERY = `*[_type == "generic"][0] {
+  headerLogo {
+    asset-> {
+      url
+    }
+  },
+  footerLogo {
+    asset-> {
+      url
+    }
+  },
+  footerImage {
+    asset-> {
+      url
+    }
+  },
+  bookNowLink,
+  subscribeLink,
+  instagram,
+  facebook,
+  address,
+  email,
+  phone,
+  hours
 }`;

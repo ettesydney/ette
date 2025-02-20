@@ -1,9 +1,13 @@
 import { type SchemaTypeDefinition } from 'sanity'
-import {eventType} from './eventType'
-
+import home from './home'
+import about from './about'
+import menu from './menu';
+import functions from './functions'
+import whatsOn from './whatsOn'
+import generic from './generic';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [eventType],
+  types: [generic, home, about, menu, functions, whatsOn],
 }
 
 // create the specific schema (ie eventType.ts) in the schemaTypes folder

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+// import localFont from "next/font/local";
 import "./globals.css";
-import Header from "./components/header";
+// import Header from "./components/header";
 import Footer from "./components/footer";
+import { Provider } from 'jotai';
+
 
 
 export const metadata: Metadata = {
@@ -18,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={'antialiased'}>
+        <Provider>
         {/* <Header /> */}
           {children}
-        {/* <Footer /> */}
+        <Footer />
+        </Provider>
       </body>
     </html>
   );

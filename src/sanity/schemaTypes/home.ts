@@ -1,0 +1,37 @@
+import {defineField, defineType, DocumentDefinition} from 'sanity'
+
+interface CustomDocumentDefinition extends DocumentDefinition {
+  __experimental_actions?: string[];
+}
+
+export default defineType({
+  name: 'home',
+  title: 'Home',
+  type: 'document',
+  __experimental_actions: ['update', 'publish'], // Prevents "Create" & "Delete"
+  fields: [
+    defineField({
+      name: 'logo',
+      title: 'Logo',
+      type: 'image',
+      options: {hotspot: true},
+    }),
+    defineField({
+      name: 'primaryImage',
+      title: 'Primary Image',
+      type: 'image',
+      options: {hotspot: true},
+    }),
+    defineField({
+      name: 'mobileImage',
+      title: 'Mobile Image',
+      type: 'image',
+      options: {hotspot: true},
+    }),
+    defineField({
+      name: 'blurb',
+      title: 'Blurb',
+      type: 'text',
+    }),
+  ],
+} as CustomDocumentDefinition);
