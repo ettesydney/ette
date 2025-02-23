@@ -11,12 +11,6 @@ export default defineType({
   __experimental_actions: ['update', 'publish'], // Prevents "Create" & "Delete"
   fields: [
     defineField({
-      name: 'logo',
-      title: 'Logo',
-      type: 'image',
-      options: {hotspot: true},
-    }),
-    defineField({
       name: 'primaryImage',
       title: 'Primary Image',
       type: 'image',

@@ -5,20 +5,19 @@ import Intro from './components/sections/intro';
 import Menu from './components/sections/menu';
 import WhatsOn from './components/sections/whatsOn';
 
-export default async function Home() {
+export default function Home() {
 
   return (
     <div className="site-bg w-full">
       <div className='h-dvh'>
-
-     <Intro />
+        <Intro />
       </div>
       <div className='h-dvh'>
-     <About />
-     </div>
-     <Menu />
-     <Functions />
-     <WhatsOn />
+       <About />
+      </div>
+      <Menu />
+      <Functions />
+      <WhatsOn />
     </div>
   );
 }

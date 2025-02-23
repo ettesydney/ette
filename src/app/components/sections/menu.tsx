@@ -14,7 +14,9 @@ export default async function Menu() {
       <h2 className="text-3xl font-bold mb-4">{menuData.title}</h2>
 
       {/* Menu Blurb */}
-      <p className="text-lg text-gray-700 mb-6">{menuData.menuBlurb}</p>
+      <div className='max-w-2xl'>
+        <p className="text-lg text-gray-700 mb-6">{menuData.menuBlurb}</p>
+      </div>
 
       {/* Menu Sections */}
       {menuData.sections?.map((section: any, index: number) => (

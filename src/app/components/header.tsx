@@ -1,15 +1,14 @@
-"use client"; // Add this to make it a client component
-
-
-import { usePathname } from "next/navigation";
+import HeaderLogo from "./headerLogo";
+import Navigation from "./navigation";
 
 export default function Header() {
-
   return (
-    <div className="header absolute w-full z-10 top-0">
-      <div className="grid grid-cols-12 items-center p-4">
-        {/* Logo */}
-       HEADER
+    <div className="header flex justify-between lg:absolute w-full">
+      <div className="">
+      <HeaderLogo />
+      </div>
+      <div className="self-start">
+      <Navigation />
       </div>
     </div>
   );

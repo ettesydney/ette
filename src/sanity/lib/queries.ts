@@ -1,10 +1,4 @@
 export const HOMEPAGE_QUERY = `*[_type == "home"][0] {
-  logo {
-    asset-> {
-      url
-    },
-    alt
-  },
   primaryImage {
     asset-> {
       url

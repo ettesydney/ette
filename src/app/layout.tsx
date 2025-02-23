@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 // import localFont from "next/font/local";
 import "./globals.css";
-// import Header from "./components/header";
+import Header from "./components/header";
 import Footer from "./components/footer";
-import { Provider } from 'jotai';
+import Navigation from "./components/navigation";
+import HeaderLogo from "./components/headerLogo";
+import Head from "next/head";
 
 
 
@@ -20,11 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={'antialiased'}>
-        <Provider>
-        {/* <Header /> */}
+        <Header />
           {children}
         <Footer />
-        </Provider>
       </body>
     </html>
   );

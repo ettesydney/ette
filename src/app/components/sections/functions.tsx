@@ -1,6 +1,6 @@
 import { client } from '@/sanity/lib/client';
 import { FUNCTIONS_QUERY } from '@/sanity/lib/queries';
-// import ImageHelper from '../helpers/ImageHelper';
+import ImageSlider from '../helpers/imageSlider';
 
 export default async function Functions() {
   const functionsData = await client.fetch(FUNCTIONS_QUERY);
@@ -13,40 +13,27 @@ export default async function Functions() {
     <div className="p-6 text-center min-h-screen">
       {/* Function Sections */}
       {functionsData.sections?.map((section: any, index: number) => (
-        <div key={index} className="mb-8">
-          {/* Title */}
-          <h3 className="text-2xl font-semibold mb-2">{section.title}</h3>
+        <div key={index} className="mb-16">
+          
+          {/* Centered Image Slider - 6 columns wide */}
+          <div className="mx-auto w-full md:w-1/2 lg:w-1/2" style={{ height: '300px' }}>
+            <ImageSlider images={section.images} />
+          </div>
 
-          {/* Blurb */}
-          <p className="text-lg text-gray-700 mb-4">{section.blurb}</p>
+          <h3 className="text-2xl font-semibold mt-6 mb-2">{section.title}</h3>
 
-          {/* Call to Action */}
+          <p className="text-lg text-gray-700 mb-4 max-w-3xl mx-auto">{section.blurb}</p>
+
           {section.callToAction && (
             <a 
               href={section.callToAction} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
+              className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition"
             >
               Learn More
             </a>
           )}
-
-          {/* Image Slider (Basic version) */}
-          <div className="flex overflow-x-auto space-x-4 mt-4">
-            Make your own image slider here, repeatable component
-            {/* {section.images?.map((image: any, imgIndex: number) => (
-              <div key={imgIndex} className="w-64 flex-shrink-0">
-                <ImageHelper 
-                  img={image.asset.url} 
-                  alt={image.alt || 'Function Image'} 
-                  width={250} 
-                  height={150} 
-                  className="rounded-lg"
-                />
-              </div>
-            ))} */}
-          </div>
         </div>
       ))}
     </div>

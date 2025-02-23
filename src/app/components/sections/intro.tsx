@@ -1,6 +1,7 @@
 import { client } from '@/sanity/lib/client';
 import { HOMEPAGE_QUERY } from '@/sanity/lib/queries';
 import ImageHelper from '../helpers/imageHelper';
+import TextTicker from '../helpers/textTicker';
 
 export default async function Intro() {
   const introData = await client.fetch(HOMEPAGE_QUERY);
@@ -10,17 +11,7 @@ export default async function Intro() {
   }
 
   return (
-    <div className="p-6 text-center dark-bg min-h-screen">
-      {/* Logo */}
-      <div className="mb-4">
-        <ImageHelper 
-          img={introData.logo?.asset?.url} 
-          alt={introData.logo?.alt || 'Logo'} 
-          width={150} 
-          height={150} 
-        />
-      </div>
-
+    <div className="text-center dark-bg min-h-screen">
       {/* Primary Image */}
       <div className="mb-4">
         <ImageHelper 
@@ -42,7 +33,9 @@ export default async function Intro() {
       </div>
 
       {/* Blurb */}
-      <p className="text-lg text-gray-700">{introData.blurb}</p>
+      <div className='text-primary w-full'>
+        {introData?.blurb && <TextTicker text={introData.blurb} /> }
+      </div>
     </div>
   );
 }
