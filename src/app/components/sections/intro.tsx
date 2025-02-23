@@ -10,7 +10,7 @@ export default async function Intro() {
   }
 
   return (
-    <div className="p-6 text-center">
+    <div className="p-6 text-center dark-bg min-h-screen">
       {/* Logo */}
       <div className="mb-4">
         <ImageHelper 

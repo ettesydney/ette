@@ -19,6 +19,9 @@
   --background-color: #fff;
   --bg-primary: #352E2E;
   --primary: #fce7f2;
+  --primary-light: #FDF2F8;
+  --dark-background: #352E2E;
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -41,8 +44,12 @@ html, body {
 
 }
 
-.home {
-  background-color: #352E2E;
+.site-bg {
+  background-color: var(--primary-light);
+}
+
+.dark-bg {
+  background-color: var(--dark-background);
 }
 
 .svg-color {

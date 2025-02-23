@@ -3,11 +3,12 @@ import About from './components/sections/about';
 import Functions from './components/sections/functions';
 import Intro from './components/sections/intro';
 import Menu from './components/sections/menu';
+import WhatsOn from './components/sections/whatsOn';
 
 export default async function Home() {
 
   return (
-    <div className="home w-full">
+    <div className="site-bg w-full">
       <div className='h-dvh'>
 
      <Intro />
@@ -17,6 +18,7 @@ export default async function Home() {
      </div>
      <Menu />
      <Functions />
+     <WhatsOn />
     </div>
   );
 }

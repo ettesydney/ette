@@ -10,7 +10,7 @@ export default async function Functions() {
   }
 
   return (
-    <div className="p-6 text-center">
+    <div className="p-6 text-center min-h-screen">
       {/* Function Sections */}
       {functionsData.sections?.map((section: any, index: number) => (
         <div key={index} className="mb-8">

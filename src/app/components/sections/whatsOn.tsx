@@ -10,7 +10,7 @@ export default async function WhatsOn() {
   }
 
   return (
-    <div className="p-6 text-center">
+    <div className="p-6 text-center min-h-screen">
       {/* Section Title */}
       <h2 className="text-3xl font-bold mb-4">{whatsOnData.title}</h2>
 

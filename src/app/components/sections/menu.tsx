@@ -9,7 +9,7 @@ export default async function Menu() {
   }
 
   return (
-    <div className="p-6 text-center">
+    <div className="text-center min-h-screen bg-primarylights flex flex-col items-center justify-center gap-4">
       {/* Menu Title */}
       <h2 className="text-3xl font-bold mb-4">{menuData.title}</h2>
 
@@ -45,5 +45,6 @@ export default async function Menu() {
         </div>
       )}
     </div>
+
   );
 }
