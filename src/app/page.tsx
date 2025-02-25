@@ -12,9 +12,7 @@ export default function Home() {
       <div className='h-dvh'>
         <Intro />
       </div>
-      <div className='h-dvh'>
        <About />
-      </div>
       <Menu />
       <Functions />
       <WhatsOn />

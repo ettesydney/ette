@@ -35,8 +35,8 @@ export default function WhatsOnCard({ date, title, blurb, image, callToAction }:
               img={image.url}
               alt={image.alt || 'Event Image'}
               className={`w-full h-full object-cover transition-opacity duration-300 ${isHovered ? 'opacity-0' : 'opacity-100'}`}
-              width={250}
-              height={200}
+              width={350}
+              height={300}
             />
           )}
 

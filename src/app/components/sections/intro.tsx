@@ -11,22 +11,22 @@ export default async function Intro() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-center dark-bg">
-      <div className='flex justify-center w-full h-full relative'>
-
-        {/* Primary Image (80% Height, Centered, Fixed Width) */}
-        <div className="relative h-[80vh] w-1/2 flex items-center justify-center">
+    <div className="flex flex-col items-center justify-center min-h-screen text-center dark-bg w-full">
+      <div className="flex justify-center w-full h-full relative">
+        
+        {/* Primary Image (Only on lg and above) */}
+        <div className="hidden lg:flex relative h-[80vh] w-1/2 items-center justify-center">
           <ImageHelper 
             img={introData.primaryImage?.asset?.url} 
             alt={introData.primaryImage?.alt || 'Primary Image'} 
-            width={800} // Adjust width as needed
+            width={800} 
             height={600} 
             className="rounded-lg shadow-lg"
           />
         </div>
     
-        {/* Mobile Image (Only Shown on Small Screens) */}
-        <div className="md:hidden w-[80%] h-[50vh] flex items-center justify-center">
+        {/* Mobile Image (Only on md and below) */}
+        <div className="lg:hidden flex w-[80%] h-[50vh] items-center justify-center">
           <ImageHelper 
             img={introData.mobileImage?.asset?.url} 
             alt={introData.mobileImage?.alt || 'Mobile Image'} 
@@ -42,8 +42,5 @@ export default async function Intro() {
         </div>
       </div>
     </div>
-
   );
-  
-  
 }

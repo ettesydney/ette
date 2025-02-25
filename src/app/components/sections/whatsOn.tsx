@@ -1,6 +1,7 @@
 import { client } from '@/sanity/lib/client';
 import { WHATS_ON_QUERY } from '@/sanity/lib/queries';
 import WhatsOnCard from '../whatsOnCard';
+import SwiperHelper from '../helpers/swiperHelper';
 
 export default async function WhatsOn() {
   const whatsOnData = await client.fetch(WHATS_ON_QUERY);
@@ -10,15 +11,15 @@ export default async function WhatsOn() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-center bg-primarylight">
+    <div className="flex flex-col items-center justify-center min-h-screen text-center bg-primarylight w-full">
       {/* Section Title */}
       <h2 className="text-3xl font-bold mb-4">{whatsOnData.title}</h2>
 
       {/* Section Blurb */}
       <p className="text-lg text-gray-700 mb-6">{whatsOnData.blurb}</p>
 
-      {/* Events Grid */}
-      <div className="grid grid-cols-[repeat(auto-fit,_25%)] gap-6 w-full justify-center">
+      {/* Events Grid (Visible on lg and above) */}
+      <div className="hidden lg:grid grid-cols-[repeat(auto-fit,_25%)] gap-6 w-full justify-center">
         {whatsOnData.events?.map((event: any, index: number) => (
           <WhatsOnCard
             key={index}
@@ -29,6 +30,22 @@ export default async function WhatsOn() {
             callToAction={event.callToAction}
           />
         ))}
+      </div>
+
+      {/* Mobile Swiper (Visible on md and below) */}
+      <div className="lg:hidden w-full">
+        <SwiperHelper>
+          {whatsOnData.events?.map((event: any, index: number) => (
+            <WhatsOnCard
+              key={index}
+              date={event.date}
+              title={event.title}
+              blurb={event.blurb}
+              image={event.image ? { url: event.image.asset.url, alt: event.image.alt } : undefined}
+              callToAction={event.callToAction}
+            />
+          ))}
+        </SwiperHelper>
       </div>
     </div>
   );

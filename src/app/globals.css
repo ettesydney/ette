@@ -41,6 +41,16 @@ html, body {
   font-family: 'MaisonNeueExtended', Arial, Helvetica, sans-serif;
   letter-spacing: 0.2em;
   font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+button, .button {
+  background: transparent ;
+  border-color: var(--primary-light);
+  border: 1px solid;
+  border-radius: 0;
+  padding: 1em 3em;
+  text-transform: uppercase
 }
 
 .text-primary {
