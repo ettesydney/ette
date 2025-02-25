@@ -10,7 +10,7 @@ export default async function Functions() {
   }
 
   return (
-    <div className="p-6 text-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen text-center bg-primarylight">
       {/* Function Sections */}
       {functionsData.sections?.map((section: any, index: number) => (
         <div key={index} className="mb-16">

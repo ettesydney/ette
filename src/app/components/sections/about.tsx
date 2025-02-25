@@ -13,7 +13,7 @@ export default async function About() {
   }
 
   return (
-    <div className="p-6 text-center bg-primarylight min-h-screen ">
+    <div className="flex flex-col items-center justify-center min-h-screen text-center bg-primarylight">
       <div className='flex flex-col items-center justify-center gap-4'>
        <div className="mb-4">
           <ImageHelper 

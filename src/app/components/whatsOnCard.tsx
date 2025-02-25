@@ -1,4 +1,7 @@
+'use client';
+
 import ImageHelper from "./helpers/imageHelper";
+import { useState } from 'react';
 
 interface WhatsOnCardProps {
   date: string;
@@ -9,43 +12,57 @@ interface WhatsOnCardProps {
 }
 
 export default function WhatsOnCard({ date, title, blurb, image, callToAction }: WhatsOnCardProps) {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div className="p-4 border rounded-lg shadow-lg">
-      {/* Event Date */}
-      <p className="text-sm text-gray-500 mb-1">
-        {new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-      </p>
+    <div className="relative">
+      <div
+        className="overflow-hidden border rounded-lg shadow-lg dark-bg"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onTouchStart={() => setIsHovered(true)}
+        onTouchEnd={() => setTimeout(() => setIsHovered(false), 2000)} // Keeps it visible briefly on mobile
+      >
+        {/* Event Date (Always Visible) */}
+        <p className="absolute top-3 text-sm text-primary w-full text-center z-10">
+          {new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+        </p>
 
-      {/* Event Title */}
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+        {/* Event Image & Hover Effect */}
+        <div className="relative w-full h-100">
+          {image?.url && (
+            <ImageHelper
+              img={image.url}
+              alt={image.alt || 'Event Image'}
+              className={`w-full h-full object-cover transition-opacity duration-300 ${isHovered ? 'opacity-0' : 'opacity-100'}`}
+              width={250}
+              height={200}
+            />
+          )}
 
-      {/* Event Image */}
-      {image?.url && (
-        <ImageHelper
-          img={image.url} 
-          alt={image.alt || 'Event Image'} 
-          width={400} 
-          height={250} 
-          className="mx-auto mb-4 rounded-md"
-        />
-      )}
+          {/* Title (Large when not hovered, smaller when hovered) */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center transition-opacity duration-300">
+            <h2 className={`text-xl text-primary transition-transform duration-300 ${isHovered ? 'text-lg' : 'text-2xl'}`}>
+              {title}
+            </h2>
+            {isHovered && <p className="text-lg text-primary">{blurb}</p>}
+          </div>
 
-      {/* Event Blurb */}
-      <p className="text-lg text-gray-600">{blurb}</p>
-
-      {/* Call to Action Button */}
-      {callToAction && (
-        <div className="mt-4">
-          <a 
-            href={callToAction} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
-          >
-            Learn More
-          </a>
+          {/* Call to Action Button (Visible only on hover) */}
+          {isHovered && callToAction && (
+            <div className="absolute bottom-3 left-0 right-0 flex justify-center">
+              <a
+                href={callToAction}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-block bg-blue-600 text-white px-4 py-2"
+              >
+                Learn More
+              </a>
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 }

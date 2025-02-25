@@ -10,7 +10,7 @@ export default async function WhatsOn() {
   }
 
   return (
-    <div className="p-6 text-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen text-center bg-primarylight">
       {/* Section Title */}
       <h2 className="text-3xl font-bold mb-4">{whatsOnData.title}</h2>
 
@@ -18,7 +18,7 @@ export default async function WhatsOn() {
       <p className="text-lg text-gray-700 mb-6">{whatsOnData.blurb}</p>
 
       {/* Events Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-[repeat(auto-fit,_25%)] gap-6 w-full justify-center">
         {whatsOnData.events?.map((event: any, index: number) => (
           <WhatsOnCard
             key={index}
