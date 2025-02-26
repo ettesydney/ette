@@ -11,16 +11,16 @@ export default async function Menu() {
   }
 
   return (
-    <div className="text-center min-h-screen bg-primarylights flex flex-col items-center justify-center gap-4 my-4 mx-[2rem]" id="menu">
+    <div className="text-center min-h-screen bg-primarylights flex flex-col items-center justify-center gap-4 mx-[2rem]">
       {/* Menu Blurb */}
       <div className='max-w-2xl'>
         <p className="mb-6">{menuData.menuBlurb}</p>
       </div>
       
       {/* Menu Title */}
-      <div>
+      <div className='lg:mb-[1rem]'>
         {menuData.title.split(' ').map((word: string, index: number) => (
-          <h2 key={index} className="title mb-[-5px]">{word}</h2>
+          <h2 key={index} className="title mb-[-5px] ">{word}</h2>
         ))}
       </div>
 
@@ -28,12 +28,13 @@ export default async function Menu() {
       {menuData.sections?.map((section: any, index: number) => (
         <div key={index} className="mb-6">
           {/* Section Title */}
-          <h3 className=" mb-2">{section.title}</h3>
+          <h3 className="mb-2">{section.title}</h3>
           
           {/* Menu Items */}
           <ul className="">
             {section.items?.map((item: string, itemIndex: number) => (
-              <li key={itemIndex} className="mb-1">{item}</li>
+                <li key={itemIndex} className="mb-1">{item === 'blank' ? '\u00A0' : item}</li>
+              
             ))}
           </ul>
         </div>
@@ -54,7 +55,7 @@ export default async function Menu() {
       )}
       
       {siteData.bookNowLink && (
-        <div className="">
+        <div className="lg:mb-0 mb-[4rem]">
           <a 
             href={siteData.bookNowLink} 
             target="_blank" 

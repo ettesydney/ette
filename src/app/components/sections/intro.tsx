@@ -11,7 +11,7 @@ export default async function Intro() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-center dark-bg w-full">
+    <div className="flex flex-col items-center justify-center min-h-dvh text-center dark-bg w-full">
       <div className="flex justify-center w-full h-full relative">
         
         {/* Primary Image (Only on lg and above) */}

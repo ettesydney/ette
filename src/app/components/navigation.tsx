@@ -36,7 +36,7 @@ export default function Navigation() {
 
   return (
     <div>
-      <nav className="lg:mix-blend-difference text-primary block w-full max-w-screen py-4 mx-auto sticky top-3 lg:px-8 z-[10]">
+      <nav className="lg:mix-blend-difference text-primary block w-full max-w-screen py-4 mx-auto sticky top-3 lg:px-4 z-[10]">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
           <div className="lg:hidden">
             <button
@@ -57,68 +57,6 @@ export default function Navigation() {
               </span>
             </button>
           </div>
-
-          {/* Mobile Menu */}
-          {/* <div
-            className={`fixed top-0 left-0 min-h-dvh w-full dark-bg shadow-lg transform transition-transform duration-300 ease-in-out ${
-              isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-            } lg:hidden z-50`}
-          >
-            <div className="flex flex-row items-center">
-              <button onClick={toggleMobileMenu} className="absolute top-4 right-4 border-none">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-8 h-8"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-
-            <div className="flex items-center justify-center h-dvh">
-              <ul className="flex flex-col gap-4 p-4">
-                {navItems.map((item, index) => (
-                  <li key={index} className="flex items-center justify-center p-1 gap-x-2 border-none">
-                    <Link href={item.href} className="flex items-center justify-center">
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-                <li className="flex items-center justify-center">
-                  <Link href={"#"} className="px-4 py-2 border hover:bg-gray-200">
-                    Book
-                  </Link>
-                </li>
-              </ul>
-
-              {siteData && (
-                <div className="absolute bottom-0 w-full flex flex-col items-center">
-                  <div className="flex items-center gap-4 mt-4">
-                  <a href={siteData.instagram} target="_blank">
-                    <ImageHelper img={instagram} alt="Instagram" width={22} height={22} />
-                  </a>
-                  <a href={siteData.facebook} target="_blank">
-                    <ImageHelper img={facebook} alt="Facebook" width={20} height={20} />
-                  </a>
-                  </div>
-                  <div className="mt-4 text-center">
-                  <ul>
-                    <li>{siteData.address}</li>
-                    <li>
-                    <a href={`mailto:${siteData.email}`}>{siteData.email}</a>
-                    </li>
-                    <li>
-                    <a href={`tel:${siteData.phone}`}>{siteData.phone}</a>
-                    </li>
-                  </ul>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div> */}
 
           {/* Mobile Menu */}
           <div
@@ -184,7 +122,7 @@ export default function Navigation() {
 
           {/* Desktop Menu */}
           <div className="hidden lg:block">
-            <ul className="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+            <ul className="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-3">
               {navItems.map((item, index) => (
                 <li key={index} className="flex items-center p-1 gap-x-2 ">
                   <Link href={item.href} className="flex items-center">
