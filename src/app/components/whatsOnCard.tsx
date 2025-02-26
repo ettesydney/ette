@@ -55,7 +55,7 @@ export default function WhatsOnCard({ date, title, blurb, image, callToAction }:
                 href={callToAction}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 inline-block bg-blue-600 text-white px-4 py-2"
+                className="mt-2 button text-primary px-4 py-2"
               >
                 Learn More
               </a>

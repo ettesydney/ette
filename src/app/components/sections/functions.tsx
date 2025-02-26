@@ -40,7 +40,7 @@ export default async function Functions() {
                 href={section.callToAction} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="button inline-block transition"
+                className="button inline-block transition px-4 py-2"
               >
                 Learn More
               </a>

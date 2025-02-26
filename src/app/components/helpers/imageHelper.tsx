@@ -24,7 +24,7 @@ export default function ImageHelper({
   if (!img) return null; // Don't render anything if no image URL
 
   // Determine dynamic props based on provided values
-  const imageProps: Record<string, any> = { className: `mx-auto ${className}` };
+  const imageProps: Record<string, any> = { className: `${className}` };
 
   if (layout) {
     imageProps.layout = layout;

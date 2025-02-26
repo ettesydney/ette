@@ -35,12 +35,12 @@ export default async function Menu() {
 
       {/* Drinks Menu PDF Link */}
       {menuData.drinksMenu?.asset?.url && (
-        <div className="mt-6 button">
+        <div className="mt-6 button px-4 py-2">
           <a 
             href={menuData.drinksMenu.asset.url} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
+            className=""
           >
             View Drinks Menu
           </a>

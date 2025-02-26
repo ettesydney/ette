@@ -7,12 +7,12 @@ export default async function HeaderLogo() {
   const siteData = await client.fetch(GENERIC_QUERY)
 
   return (
-    <div>
+    <div className="w-1/4 pl-2 pt-2 z-[11] lg:text-left">
       <ImageHelper 
-        img={siteData.headerLogo?.asset?.url} 
-        alt='ette Sydney logo' 
-        width={300} 
-        height={200} 
+      img={siteData.headerLogo?.asset?.url} 
+      alt='ette Sydney logo' 
+      width={300} 
+      height={200} 
       />
     </div>
   );
