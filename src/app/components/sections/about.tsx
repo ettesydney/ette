@@ -13,7 +13,7 @@ export default async function About() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center h-dvh text-center bg-primarylight mt-[8rem] lg:mt-0" id='about'>
+    <div className="flex flex-col items-center justify-center text-center bg-primarylight my-[8rem] mb-[6rem] lg:mt-0" id='about'>
       <div className='flex flex-col items-center justify-center gap-4 lg:gap-8 mx-[2rem] lg:pt-[6rem]'>
        <div className="mx-[6rem] lg:mb-[3rem]">
           <ImageHelper 
@@ -24,7 +24,7 @@ export default async function About() {
           />
         </div>
         <div>
-          <h2 className="mb-2 title">{aboutData.title}</h2>
+          <h2 className="mb-2 mt-2 title">{aboutData.title}</h2>
         </div>
         <div className="max-w-2xl">
           <p className="">{aboutData.blurb}</p>
