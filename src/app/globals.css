@@ -11,7 +11,7 @@
   font-style: normal;
 }
 @font-face {
-  font-family: 'GT Alpina Extended Thin Italic';
+  font-family: 'GTAlpinaExtendedThinItalic';
   src: url('/fonts/GT-Alpina-Extended-Thin-Italic.woff2') format('woff2'),
        url('/fonts/GT-Alpina-Extended-Thin-Italic.woff') format('woff'),
        url('/fonts/GT-Alpina-Extended-Thin-Italic.ttf') format('truetype'),
@@ -86,7 +86,7 @@ button, .button {
 }
 
 .title {
-  font-family: GT Alpina Extended Thin Italic, Helvetica;
+  font-family: 'GTAlpinaExtendedThinItalic';
   text-transform: initial;
   letter-spacing: 0rem;
   font-size: 2.5rem;
