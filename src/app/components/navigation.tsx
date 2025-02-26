@@ -192,8 +192,8 @@ export default function Navigation() {
                   </Link>
                 </li>
               ))}
-              <li className="px-4 py-2 border ">
-                <Link href={"#"}>Book</Link>
+              <li className="px-4 py-2 border w-[100px] text-center">
+                <a href={"#"} target='_blank'>Book</a>
               </li>
             </ul>
           </div>

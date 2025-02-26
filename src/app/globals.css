@@ -64,7 +64,7 @@ button, .button {
 .dark-button {
   background: var(--dark-background);
   color: var(--primary);
-  border-color: var(--primary);
+  border-color: var(--dark-background);
   border: 1px solid;
 }
 
@@ -88,6 +88,10 @@ button, .button {
   color: var(--text-color);
   fill: currentColor;
   stroke: currentColor;
+}
+
+.logo {
+  mix-blend-mode: difference;
 }
 
 .title {

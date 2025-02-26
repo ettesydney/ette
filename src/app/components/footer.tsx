@@ -8,8 +8,8 @@ export default async function Footer() {
   const siteData = await client.fetch(GENERIC_QUERY);
 
   return (
-    <footer className="w-full dark-bg text-primary pt-8">
-      <div className="flex flex-col items-center w-full mt-[5rem]">
+    <footer className="w-full dark-bg text-primary pt-8 h-dvh relative">
+      <div className="flex flex-col items-center w-full mt-[5rem] lg:justify-center lg:h-[90%]">
 
         {/* Operating Hours (Now Above Contact Info) */}
         <div className="text-center mb-6 md:hidden">
@@ -61,39 +61,39 @@ export default async function Footer() {
           </a>
         </div>
 
-        {/* Bottom Row (Still Visible on All Screens) */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between flex-end w-full p-4 gap-6">
+      </div>
 
-          {/* Left Side - Join the Family Button */}
-          <div className="flex-1 text-center md:text-left">
-            <a className="button px-4 py-2 w-[200px]" href={siteData.joinTheFamilyLink} target="_blank">
-              Join the Family
-            </a>
-          </div>
+      {/* Bottom Row (Visible only on lg and above, Positioned at the bottom of the page) */}
+      <div className="lg:absolute lg:bottom-0 lg:w-full lg:flex lg:flex-row lg:items-end lg:justify-between lg:p-4 lg:gap-6 lg:h-auto">
+        
+        {/* Left Side - Join the Family Button */}
+        <div className="flex-1 text-center md:text-left">
+          <a className="button px-4 py-2 w-[200px]" href={siteData.joinTheFamilyLink} target="_blank">
+            Join the Family
+          </a>
+        </div>
 
-          {/* Center - Footer Logo (Now Always Centered) */}
-          <div className="flex-1 flex justify-center mt-[2rem] md:mt-0">
-            <ImageHelper
-              img={siteData.footerLogo?.asset?.url}
-              alt={siteData.footerLogo?.alt || 'Footer Logo'}
-              width={100}
-              height={100}
-            />
-          </div>
+        {/* Center - Footer Logo (Now Always Centered) */}
+        <div className="flex-1 flex justify-center mt-[2rem] md:mt-0">
+          <ImageHelper
+            img={siteData.footerLogo?.asset?.url}
+            alt={siteData.footerLogo?.alt || 'Footer Logo'}
+            width={100}
+            height={100}
+          />
+        </div>
 
-          {/* Right Side - Contact Details (Hidden on Mobile, Visible on Desktop) */}
-          <div className="flex-1 hidden lg:block text-right">
-            <ul>
-              <li>{siteData.address}</li>
-              <li>
-                 <a href={`mailto:${siteData.email}`} className="hover:underline">{siteData.email}</a>
-              </li>
-              <li>
-                <a href={`tel:${siteData.phone}`} className="hover:underline">{siteData.phone}</a>
-              </li>
-            </ul>
-          </div>
-
+        {/* Right Side - Contact Details (Hidden on Mobile, Visible on Desktop) */}
+        <div className="flex-1 hidden lg:block text-right">
+          <ul>
+            <li>{siteData.address}</li>
+            <li>
+               <a href={`mailto:${siteData.email}`} className="hover:underline">{siteData.email}</a>
+            </li>
+            <li>
+              <a href={`tel:${siteData.phone}`} className="hover:underline">{siteData.phone}</a>
+            </li>
+          </ul>
         </div>
       </div>
     </footer>

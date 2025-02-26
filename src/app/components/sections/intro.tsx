@@ -15,29 +15,29 @@ export default async function Intro() {
       <div className="flex justify-center w-full h-full relative">
         
         {/* Primary Image (Only on lg and above) */}
-        <div className="hidden lg:flex relative h-[80vh] w-1/2 items-center justify-center">
+        <div className="hidden lg:flex relative w-full h-screen items-center justify-center">
           <ImageHelper 
             img={introData.primaryImage?.asset?.url} 
             alt={introData.primaryImage?.alt || 'Primary Image'} 
-            width={800} 
-            height={600} 
-            className="rounded-lg shadow-lg"
+            width={1920} 
+            height={1080} 
+            className="absolute inset-0 object-cover w-full h-full"
           />
         </div>
-    
+          
         {/* Mobile Image (Only on md and below) */}
-        <div className="lg:hidden flex w-[80%] h-[50vh] items-center justify-center">
+        <div className="lg:hidden flex relative w-full h-screen items-center justify-center">
           <ImageHelper 
             img={introData.mobileImage?.asset?.url} 
             alt={introData.mobileImage?.alt || 'Mobile Image'} 
-            width={400} 
-            height={300} 
-            className="rounded-md"
+            width={375} 
+            height={670} 
+            className="absolute inset-0 object-cover w-full h-full"
           />
         </div>
     
         {/* Blurb (Text Ticker Overlapping Image, 25% from Bottom) */}
-        <div className="absolute lg:bottom-[25%] bottom-[0] left-0 right-0 text-primary w-full">
+        <div className="absolute lg:bottom-[25%] bottom-[20%] left-0 right-0 text-primary w-full">
           {introData?.blurb && <TextTicker text={introData.blurb} />}
         </div>
       </div>

@@ -11,7 +11,7 @@ export default async function WhatsOn() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-center bg-primarylight w-full">
+    <div className="flex flex-col items-center justify-center min-h-screen text-center bg-primarylight w-full" id='whats-on'>
 
       {/* Events Grid (Visible on lg and above) */}
       <div className="hidden lg:grid grid-cols-[repeat(auto-fit,_25%)] gap-6 w-full justify-center">
