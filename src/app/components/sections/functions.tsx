@@ -35,7 +35,7 @@ export default async function Functions() {
           {/* Content Below Swiper */}
           <div className="mt-8 px-4 md:px-0"> {/* Added spacing and padding */}
             <h2 className="title mb-4 lg:mb-[2rem]">{section.title}</h2>
-            <p className=" mb-6 max-w-3xl lg:ml-auto lg:mr-auto">{section.blurb}</p>
+            <p className=" mb-6 max-w-3xl md:ml-auto md:mr-auto">{section.blurb}</p>
             {section.callToAction && (
               <a 
                 href={section.callToAction} 

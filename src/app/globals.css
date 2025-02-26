@@ -40,6 +40,11 @@
   }
 }
 
+*, html {
+  scroll-behavior: smooth !important;
+}
+
+
 /* Apply Custom Font */
 html, body {
   margin: 0;
@@ -53,9 +58,6 @@ html, body {
   text-transform: uppercase;
 }
 
-*, html {
-  scroll-behavior: smooth !important;
-}
 
 button, .button {
   background: transparent ;
