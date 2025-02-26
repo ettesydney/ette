@@ -14,8 +14,8 @@ export default async function About() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen text-center bg-primarylight">
-      <div className='flex flex-col items-center justify-center gap-4'>
-       <div className="mb-4">
+      <div className='flex flex-col items-center justify-center gap-4 mx-[2rem]'>
+       <div className="mb-[2rem] mx-[5rem]">
           <ImageHelper 
             img={aboutData.image?.asset?.url} 
             alt={aboutData.image?.alt || 'About Image'} 
@@ -24,10 +24,10 @@ export default async function About() {
           />
         </div>
         <div>
-          <h2 className="text-2xl font-bold mb-2">{aboutData.title}</h2>
+          <h2 className="mb-2 title">{aboutData.title}</h2>
         </div>
         <div className="max-w-2xl">
-          <p className="text-lg text-gray-700">{aboutData.blurb}</p>
+          <p className="">{aboutData.blurb}</p>
         </div>
       </div>
     </div>

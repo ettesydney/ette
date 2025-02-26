@@ -1,31 +1,37 @@
 import { client } from '@/sanity/lib/client';
-import { MENU_QUERY } from '@/sanity/lib/queries';
+import { MENU_QUERY, GENERIC_QUERY} from '@/sanity/lib/queries';
 
 export default async function Menu() {
   const menuData = await client.fetch(MENU_QUERY);
+  const siteData = await client.fetch(GENERIC_QUERY)
+  
 
   if (!menuData) {
     return <p className="text-center text-red-500">No menu data found.</p>;
   }
 
   return (
-    <div className="text-center min-h-screen bg-primarylights flex flex-col items-center justify-center gap-4 my-4">
-      {/* Menu Title */}
-      <h2 className="text-3xl font-bold mb-4">{menuData.title}</h2>
-
+    <div className="text-center min-h-screen bg-primarylights flex flex-col items-center justify-center gap-4 my-4 mx-[2rem]">
       {/* Menu Blurb */}
       <div className='max-w-2xl'>
-        <p className="text-lg text-gray-700 mb-6">{menuData.menuBlurb}</p>
+        <p className="mb-6">{menuData.menuBlurb}</p>
+      </div>
+      
+      {/* Menu Title */}
+      <div>
+        {menuData.title.split(' ').map((word: string, index: number) => (
+          <h2 key={index} className="title mb-[-5px]">{word}</h2>
+        ))}
       </div>
 
       {/* Menu Sections */}
       {menuData.sections?.map((section: any, index: number) => (
         <div key={index} className="mb-6">
           {/* Section Title */}
-          <h3 className="text-xl font-semibold mb-2">{section.title}</h3>
+          <h3 className=" mb-2">{section.title}</h3>
           
           {/* Menu Items */}
-          <ul className="text-lg text-gray-600">
+          <ul className="">
             {section.items?.map((item: string, itemIndex: number) => (
               <li key={itemIndex} className="mb-1">{item}</li>
             ))}
@@ -35,14 +41,27 @@ export default async function Menu() {
 
       {/* Drinks Menu PDF Link */}
       {menuData.drinksMenu?.asset?.url && (
-        <div className="mt-6 button px-4 py-2">
+        <div className="mt-1">
           <a 
             href={menuData.drinksMenu.asset.url} 
             target="_blank" 
             rel="noopener noreferrer"
-            className=""
+            className="button px-4 py-2  w-[200px] block"
           >
-            View Drinks Menu
+            Drinks Menu
+          </a>
+        </div>
+      )}
+      
+      {siteData.bookNowLink && (
+        <div className="">
+          <a 
+            href={siteData.bookNowLink} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="button dark-button px-4 py-2 w-[200px] block"
+          >
+            Book
           </a>
         </div>
       )}

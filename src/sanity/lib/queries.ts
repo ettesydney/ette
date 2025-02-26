@@ -65,7 +65,8 @@ export const WHATS_ON_QUERY = `*[_type == "whatsOn"][0] {
       },
       alt
     },
-    callToAction
+    callToAction,
+    callToActionText
   }
 }`;
 

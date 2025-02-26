@@ -88,7 +88,7 @@ export default function Navigation() {
                   </li>
                 ))}
                 <li className="flex items-center justify-center">
-                  <Link href={"#"} className="px-4 py-2 border border-gray-300 rounded hover:bg-gray-200">
+                  <Link href={"#"} className="px-4 py-2 border hover:bg-gray-200">
                     Book
                   </Link>
                 </li>
@@ -124,13 +124,13 @@ export default function Navigation() {
           <div className="hidden lg:block">
             <ul className="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
               {navItems.map((item, index) => (
-                <li key={index} className="flex items-center p-1 gap-x-2 hover:text-red-500">
+                <li key={index} className="flex items-center p-1 gap-x-2 ">
                   <Link href={item.href} className="flex items-center">
                     {item.name}
                   </Link>
                 </li>
               ))}
-              <li className="px-4 py-2 border border-gray-300 rounded hover:bg-gray-200">
+              <li className="px-4 py-2 border hover:bg-gray-200">
                 <Link href={"#"}>Book</Link>
               </li>
             </ul>

@@ -49,22 +49,27 @@ html, body {
   overflow-x: hidden;
   font-family: 'MaisonNeueExtended', Arial, Helvetica, sans-serif;
   letter-spacing: 0.2em;
-  font-size: 0.9em;
+  font-size: 0.8rem;
   text-transform: uppercase;
 }
 
 button, .button {
   background: transparent ;
-  border-color: var(--primary-light);
+  border-color: var(--primary);
   border: 1px solid;
   border-radius: 0;
-  text-transform: uppercase
+  text-transform: uppercase;
+}
+
+.dark-button {
+  background: var(--dark-background);
+  color: var(--primary);
+  border-color: var(--primary);
 }
 
 .text-primary {
   color: var(--primary);
 }
-
 
 .site-bg {
   background-color: var(--primary-light);
@@ -81,11 +86,12 @@ button, .button {
 }
 
 .title {
-  font-family: 'GT Alpina Extended Thin Italic', Helvetica;
+  font-family: GT Alpina Extended Thin Italic, Helvetica;
+  text-transform: initial;
+  letter-spacing: 0rem;
+  font-size: 2.5rem;
 
 }
-
-
 
 .custom-box-border {
   border: 1px solid var(--primary);

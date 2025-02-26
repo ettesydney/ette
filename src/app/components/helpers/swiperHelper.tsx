@@ -34,7 +34,7 @@ export default function SwiperHelper({ children }: SwiperHelperProps) {
       </Swiper>
 
       {/* Navigation Arrows */}
-      <div className="flex justify-between mt-2">
+      <div className="flex justify-between">
         {/* Left Arrow */}
         <button
           className="flex items-center p-1 border-none"

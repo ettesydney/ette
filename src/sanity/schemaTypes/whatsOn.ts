@@ -65,6 +65,11 @@ export default defineType({
               title: 'Call to Action or Link',
               type: 'string',
             }),
+            defineField({
+              name: 'callToActionText',
+              title: 'Call to Action Text',
+              type: 'string',
+            }),
           ],
         },
       ],

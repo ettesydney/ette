@@ -9,23 +9,24 @@ interface WhatsOnCardProps {
   blurb: string;
   image?: { url: string; alt?: string };
   callToAction?: string;
+  callToActionText?: string;
 }
 
-export default function WhatsOnCard({ date, title, blurb, image, callToAction }: WhatsOnCardProps) {
+export default function WhatsOnCard({ date, title, blurb, image, callToAction, callToActionText }: WhatsOnCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div className="relative">
       <div
-        className="overflow-hidden border rounded-lg shadow-lg dark-bg"
+        className="overflow-hidden border dark-bg"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onTouchStart={() => setIsHovered(true)}
-        onTouchEnd={() => setTimeout(() => setIsHovered(false), 2000)} // Keeps it visible briefly on mobile
+        onTouchEnd={() => setTimeout(() => setIsHovered(false), 4000)} // Keeps it visible briefly on mobile
       >
         {/* Event Date (Always Visible) */}
         <p className="absolute top-3 text-sm text-primary w-full text-center z-10">
-          {new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+          {new Date(date).toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: '2-digit' }).replace(/\//g, '.')}
         </p>
 
         {/* Event Image & Hover Effect */}
@@ -42,22 +43,39 @@ export default function WhatsOnCard({ date, title, blurb, image, callToAction }:
 
           {/* Title (Large when not hovered, smaller when hovered) */}
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center transition-opacity duration-300">
-            <h2 className={`text-xl text-primary transition-transform duration-300 ${isHovered ? 'text-lg' : 'text-2xl'}`}>
-              {title}
-            </h2>
-            {isHovered && <p className="text-lg text-primary">{blurb}</p>}
+            {!isHovered && (
+              <div>
+                {title.split(' ').map((word: string, index: number) => (
+                  <h2 key={index} className="title  text-primary transition-transform duration-300 text-2xl mb-3">
+                    {word}
+                  </h2>
+                ))}
+              </div>
+            )}
+            {isHovered && <p className="text-primary">{blurb}</p>}
           </div>
 
           {/* Call to Action Button (Visible only on hover) */}
+            {!isHovered && (
+
+              <div className="absolute bottom-5 left-0 right-0 flex justify-center lg:hidden">
+              <p
+                className="mt-2 button text-primary px-4 py-2 w-[200px]"
+                >
+                View details
+              </p>
+            </div>
+              )}
+
           {isHovered && callToAction && (
-            <div className="absolute bottom-3 left-0 right-0 flex justify-center">
+            <div className="absolute bottom-5 left-0 right-0 flex justify-center">
               <a
                 href={callToAction}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 button text-primary px-4 py-2"
+                className="mt-2 button text-primary px-4 py-2 w-[200px]"
               >
-                Learn More
+                {callToActionText ? callToActionText : 'View details'}
               </a>
             </div>
           )}

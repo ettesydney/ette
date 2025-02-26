@@ -11,38 +11,39 @@ export default async function Functions() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-center bg-red-200">
+    <div className="flex flex-col items-center justify-center min-h-screen text-center px-4 md:px-8 lg:px-16 mt-[6rem]">
       {/* Function Sections */}
       {functionsData.sections?.map((section: any, index: number) => (
-        <div key={index} className="mb-24"> {/* Increased margin-bottom for more spacing */}
-          {/* Centered Image Slider - 6 columns wide */}
-          <div className="mx-auto w-full md:w-1/2 lg:w-1/2">
+        <div key={index} className="mb-24 w-full"> {/* Full width container */}
+          {/* Swiper Container - Ensuring Visibility */}
+          <div className="w-full lg:mx-auto max-w-[800px]"> {/* Adjusted for better responsiveness */}
             <SwiperHelper>
               {section.images?.map((image: any, index: number) => (
-                <div key={index}>
+                <div key={index} className="w-full">
                   <Image
                     src={image.asset.url}
                     alt={image.alt || "Image"}
                     width={800}
                     height={300}
+                    className="w-full h-auto object-cover" // Ensures proper scaling
                   />
                 </div>
               ))}
             </SwiperHelper>
           </div>
-  
-          {/* Added more vertical spacing below Swiper */}
-          <div> {/* Increased top margin for better separation */}
-            <h3 className="text-2xl font-semibold mt-6 mb-4">{section.title}</h3>
-            <p className="text-lg text-gray-700 mb-6 max-w-3xl mx-auto">{section.blurb}</p>
+
+          {/* Content Below Swiper */}
+          <div className="mt-8 px-4 md:px-0"> {/* Added spacing and padding */}
+            <h2 className="title mb-2">{section.title}</h2>
+            <p className="mb-6">{section.blurb}</p>
             {section.callToAction && (
               <a 
                 href={section.callToAction} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="button inline-block transition px-4 py-2"
+                className="button inline-block transition px-6 py-3 w-[200px]"
               >
-                Learn More
+                Enquire
               </a>
             )}
           </div>
@@ -50,5 +51,4 @@ export default async function Functions() {
       ))}
     </div>
   );
-  
 }

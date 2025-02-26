@@ -37,7 +37,7 @@ export default async function Intro() {
         </div>
     
         {/* Blurb (Text Ticker Overlapping Image, 25% from Bottom) */}
-        <div className="absolute lg:bottom-[25%] bottom-[5%] left-0 right-0 text-primary w-full">
+        <div className="absolute lg:bottom-[25%] bottom-[0] left-0 right-0 text-primary w-full">
           {introData?.blurb && <TextTicker text={introData.blurb} />}
         </div>
       </div>

@@ -13,10 +13,10 @@ export default async function WhatsOn() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen text-center bg-primarylight w-full">
       {/* Section Title */}
-      <h2 className="text-3xl font-bold mb-4">{whatsOnData.title}</h2>
+      <h2 className="title mb-4 mx-[2rem]">{whatsOnData.title}</h2>
 
       {/* Section Blurb */}
-      <p className="text-lg text-gray-700 mb-6">{whatsOnData.blurb}</p>
+      <p className="mb-6 mx-[2rem]">{whatsOnData.blurb}</p>
 
       {/* Events Grid (Visible on lg and above) */}
       <div className="hidden lg:grid grid-cols-[repeat(auto-fit,_25%)] gap-6 w-full justify-center">
@@ -32,21 +32,25 @@ export default async function WhatsOn() {
         ))}
       </div>
 
-      {/* Mobile Swiper (Visible on md and below) */}
-      <div className="lg:hidden w-full">
-        <SwiperHelper>
-          {whatsOnData.events?.map((event: any, index: number) => (
-            <WhatsOnCard
-              key={index}
-              date={event.date}
-              title={event.title}
-              blurb={event.blurb}
-              image={event.image ? { url: event.image.asset.url, alt: event.image.alt } : undefined}
-              callToAction={event.callToAction}
-            />
-          ))}
-        </SwiperHelper>
+       {/* Mobile Swiper (Visible on md and below) */}
+       <div className="lg:hidden flex justify-center w-full px-[2rem]">
+        <div className="w-full max-w-[600px]">
+          <SwiperHelper>
+            {whatsOnData.events?.map((event: any, index: number) => (
+              <WhatsOnCard
+                key={index}
+                date={event.date}
+                title={event.title}
+                blurb={event.blurb}
+                image={event.image ? { url: event.image.asset.url, alt: event.image.alt } : undefined}
+                callToAction={event.callToAction}
+                callToActionText={event.callToActionText}
+              />
+            ))}
+          </SwiperHelper>
+        </div>
       </div>
     </div>
   );
 }
+
