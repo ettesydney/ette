@@ -16,7 +16,7 @@ export default async function Functions() {
       {functionsData.sections?.map((section: any, index: number) => (
         <div key={index} className="w-full"> {/* Full width container */}
           {/* Swiper Container - Ensuring Visibility */}
-          <div className="w-full lg:mx-auto max-w-[800px] lg:mb-[6rem]"> {/* Adjusted for better responsiveness */}
+          <div className="w-full lg:mx-auto max-w-[800px] lg:mb-[6rem] md:ml-auto md:mr-auto"> {/* Adjusted for better responsiveness */}
             <SwiperHelper>
               {section.images?.map((image: any, index: number) => (
                 <div key={index} className="w-full">
