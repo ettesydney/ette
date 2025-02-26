@@ -65,6 +65,7 @@ button, .button {
   background: var(--dark-background);
   color: var(--primary);
   border-color: var(--primary);
+  border: 1px solid;
 }
 
 .text-primary {

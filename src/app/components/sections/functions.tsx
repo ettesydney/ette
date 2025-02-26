@@ -14,7 +14,7 @@ export default async function Functions() {
     <div className="flex flex-col items-center justify-center min-h-screen text-center px-4 md:px-8 lg:px-16 mt-[6rem]">
       {/* Function Sections */}
       {functionsData.sections?.map((section: any, index: number) => (
-        <div key={index} className="mb-24 w-full"> {/* Full width container */}
+        <div key={index} className="w-full"> {/* Full width container */}
           {/* Swiper Container - Ensuring Visibility */}
           <div className="w-full lg:mx-auto max-w-[800px]"> {/* Adjusted for better responsiveness */}
             <SwiperHelper>
@@ -41,7 +41,7 @@ export default async function Functions() {
                 href={section.callToAction} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="button inline-block transition px-6 py-3 w-[200px]"
+                className="button inline-block transition px-4 py-2 w-[200px]"
               >
                 Enquire
               </a>

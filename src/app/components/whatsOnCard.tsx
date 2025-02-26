@@ -52,7 +52,7 @@ export default function WhatsOnCard({ date, title, blurb, image, callToAction, c
                 ))}
               </div>
             )}
-            {isHovered && <p className="text-primary">{blurb}</p>}
+            {isHovered && <p className="text-primary max-w-[75%]">{blurb}</p>}
           </div>
 
           {/* Call to Action Button (Visible only on hover) */}

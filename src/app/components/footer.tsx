@@ -21,7 +21,7 @@ export default async function Footer() {
         </div>
 
         {/* Footer Image */}
-        <div className="mb-6 mx-[7rem]">
+        <div className="mb-6 mx-[8rem]">
           <ImageHelper
             img={siteData.footerImage?.asset?.url}
             alt={siteData.footerImage?.alt || 'Primary Image'}

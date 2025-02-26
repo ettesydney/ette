@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
-// import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
-import Navigation from "./components/navigation";
-import HeaderLogo from "./components/headerLogo";
-import Head from "next/head";
-
-
 
 export const metadata: Metadata = {
-  title: "ette - Opening Soon",
-  description: "ette is opening soon at 10 Bridge St. Sydney 2000. Sign up for updates and follow us on Instagram.",
+  title: "ette Sydney",
+  description: "ette is open at 10 Bridge St. Sydney 2000. Sign up for updates and follow us on Instagram.",
 };
 
 export default function RootLayout({

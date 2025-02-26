@@ -37,7 +37,7 @@ export default function SwiperHelper({ children }: SwiperHelperProps) {
       <div className="flex justify-between">
         {/* Left Arrow */}
         <button
-          className="flex items-center p-1 border-none"
+          className="flex items-center border-none"
           onClick={() => swiperRef.current?.slidePrev()}
         >
           <Image src={leftArrow} alt="Left Arrow" width={20} height={20} />
@@ -45,7 +45,7 @@ export default function SwiperHelper({ children }: SwiperHelperProps) {
 
         {/* Right Arrow */}
         <button
-          className="flex items-center p-1 border-none"
+          className="flex items-center border-none"
           onClick={() => swiperRef.current?.slideNext()}
         >
           <Image src={rightArrow} alt="Right Arrow" width={20} height={20} />

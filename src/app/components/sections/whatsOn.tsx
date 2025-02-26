@@ -33,7 +33,7 @@ export default async function WhatsOn() {
       </div>
 
        {/* Mobile Swiper (Visible on md and below) */}
-       <div className="lg:hidden flex justify-center w-full px-[2rem]">
+       <div className="lg:hidden flex justify-center w-full px-4">
         <div className="w-full max-w-[600px]">
           <SwiperHelper>
             {whatsOnData.events?.map((event: any, index: number) => (
