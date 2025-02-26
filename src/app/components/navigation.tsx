@@ -153,7 +153,7 @@ export default function Navigation() {
             </div>
 
             {/* Site Data (Pinned to Bottom) */}
-            {/* {siteData && ( */}
+            {siteData && (
               <div className="w-full flex flex-col items-center p-4">
                 {/* Social Media Links */}
                 <div className="flex items-center gap-4">
@@ -178,7 +178,7 @@ export default function Navigation() {
                   </ul>
                 </div>
               </div>
-            {/* )} */}
+            )}
           </div>
 
 
