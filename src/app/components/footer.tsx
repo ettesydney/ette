@@ -66,13 +66,13 @@ export default async function Footer() {
 
           {/* Left Side - Join the Family Button */}
           <div className="flex-1 text-center md:text-left">
-            <a className="button px-4 py-2" href={siteData.joinTheFamilyLink} target="_blank">
+            <a className="button px-4 py-2 w-[200px]" href={siteData.joinTheFamilyLink} target="_blank">
               Join the Family
             </a>
           </div>
 
           {/* Center - Footer Logo (Now Always Centered) */}
-          <div className="flex-1 flex justify-center mt-[5rem] md:mt-0">
+          <div className="flex-1 flex justify-center mt-[2rem] md:mt-0">
             <ImageHelper
               img={siteData.footerLogo?.asset?.url}
               alt={siteData.footerLogo?.alt || 'Footer Logo'}

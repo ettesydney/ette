@@ -72,6 +72,10 @@ button, .button {
   color: var(--primary);
 }
 
+.text-dark {
+  color: var(--bg-primary)
+}
+
 .site-bg {
   background-color: var(--primary-light);
 }

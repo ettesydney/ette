@@ -122,7 +122,7 @@ export default function Navigation() {
 
           {/* Mobile Menu */}
           <div
-            className={`fixed top-0 left-0 h-dvh w-full dark-bg shadow-lg transform transition-transform duration-300 ease-in-out 
+            className={`fixed top-0 left-0 h-dvh w-full site-bg text-dark transform transition-transform duration-300 ease-in-out 
                         ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"} lg:hidden z-50 flex flex-col justify-between overflow-y-auto`}
           >
             {/* Close Button */}
@@ -135,7 +135,7 @@ export default function Navigation() {
             </div>
 
             {/* Centered Menu Items */}
-            <div className="flex flex-col items-center justify-center flex-grow">
+            <div className="flex flex-col items-center justify-center flex-grow text-lg">
               <ul className="flex flex-col gap-4 p-4">
                 {navItems.map((item, index) => (
                   <li key={index} className="flex items-center justify-center p-1 gap-x-2 border-none">
@@ -144,10 +144,10 @@ export default function Navigation() {
                     </Link>
                   </li>
                 ))}
-                <li className="flex items-center justify-center">
-                  <Link href={"#"} className="px-4 py-2 border hover:bg-gray-200">
+                <li className="flex items-center justify-center text-center">
+                    <a href={"#"} className="px-4 py-2 border w-[200px]" style={{ borderColor: 'var(--bg-primary)' }}>
                     Book
-                  </Link>
+                    </a>
                 </li>
               </ul>
             </div>
@@ -192,7 +192,7 @@ export default function Navigation() {
                   </Link>
                 </li>
               ))}
-              <li className="px-4 py-2 border hover:bg-gray-200">
+              <li className="px-4 py-2 border ">
                 <Link href={"#"}>Book</Link>
               </li>
             </ul>
