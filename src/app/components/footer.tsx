@@ -9,7 +9,7 @@ export default async function Footer() {
 
   return (
 <footer className="w-full min-h-screen dark-bg text-primary pt-8 lg:pt-0 flex flex-col items-center justify-center relative" id="contact">
-  <div className="flex flex-col items-center w-full mt-[5rem] lg:mt-[3rem] lg:justify-center lg:flex-grow lg:h-[90dvh]">
+  <div className="flex flex-col items-center w-full mt-[5rem] lg:mt-[3rem] lg:justify-center flex-grow lg:h-[90dvh]">
 
     {/* Operating Hours */}
     <div className="text-center mb-6 lg:hidden">
