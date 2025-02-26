@@ -153,14 +153,14 @@ export default function Navigation() {
             </div>
 
             {/* Site Data (Pinned to Bottom) */}
-            {siteData && (
+            
               <div className="w-full flex flex-col items-center p-4">
                 {/* Social Media Links */}
                 <div className="flex items-center gap-4">
-                  <a href={siteData.instagram} target="_blank">
+                  <a href={'#'} target="_blank">
                     <ImageHelper img={instagram} alt="Instagram" width={22} height={22} />
                   </a>
-                  <a href={siteData.facebook} target="_blank">
+                  <a href={'#'} target="_blank">
                     <ImageHelper img={facebook} alt="Facebook" width={20} height={20} />
                   </a>
                 </div>
@@ -168,17 +168,17 @@ export default function Navigation() {
                 {/* Contact Information */}
                 <div className="mt-4 text-center">
                   <ul>
-                    <li>{siteData.address}</li>
+                    <li>10 BRIDGE ST. SYDNEY NSW 2000                    </li>
                     <li>
-                      <a href={`mailto:${siteData.email}`} className="hover:underline">{siteData.email}</a>
+                      <a href={`a@b.com`} className="hover:underline">contact@ettesydney.com</a>
                     </li>
                     <li>
-                      <a href={`tel:${siteData.phone}`} className="hover:underline">{siteData.phone}</a>
+                      <a href={`tel:02324298766`} className="hover:underline">02324298766</a>
                     </li>
                   </ul>
                 </div>
               </div>
-            )}
+            
           </div>
 
 
