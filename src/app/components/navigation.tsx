@@ -123,7 +123,7 @@ export default function Navigation() {
           {/* Mobile Menu */}
           <div
             className={`fixed top-0 left-0 h-dvh w-full dark-bg shadow-lg transform transition-transform duration-300 ease-in-out 
-  ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"} lg:hidden z-50 flex flex-col justify-between overflow-y-auto`}
+                        ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"} lg:hidden z-50 flex flex-col justify-between overflow-y-auto`}
           >
             {/* Close Button */}
             <div className="flex justify-end p-4">
@@ -153,7 +153,7 @@ export default function Navigation() {
             </div>
 
             {/* Site Data (Pinned to Bottom) */}
-            {siteData && (
+            {/* {siteData && ( */}
               <div className="w-full flex flex-col items-center p-4">
                 {/* Social Media Links */}
                 <div className="flex items-center gap-4">
@@ -178,7 +178,7 @@ export default function Navigation() {
                   </ul>
                 </div>
               </div>
-            )}
+            {/* )} */}
           </div>
 
 
