@@ -11,7 +11,7 @@ export default async function WhatsOn() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center h-dvh lg:h-[90dvh] text-center bg-primarylight w-full mb-[5rem] lg:mb-0 lg:pb-[20rem]" id='whats-on'>
+    <div className="flex flex-col items-center justify-center h-dvh lg:h-[90dvh] text-center bg-primarylight w-full mb-[5rem] lg:mb-0 lg:pb-[20rem] mt-[5rem] lg:mt-0" id='whats-on'>
 
       {/* Events Grid (Visible on lg and above) */}
       {/* TODO: max 2 per row */}
@@ -51,7 +51,7 @@ export default async function WhatsOn() {
       <h2 className="title mb-4 lg:mb-[2rem] mt-[2rem] lg:mt-[5rem]">{whatsOnData.title}</h2>
 
       {/* Section Blurb */}
-      <p className="mb-6 max-w-3xl lg:ml-auto lg:mr-auto">{whatsOnData.blurb}</p>
+      <p className="mb-6 max-w-3xl lg:ml-auto lg:mr-auto px-8">{whatsOnData.blurb}</p>
     </div>
   );
 }

@@ -8,7 +8,7 @@ export default async function Footer() {
   const siteData = await client.fetch(GENERIC_QUERY);
 
   return (
-    <footer className="w-full dark-bg text-primary pt-8 h-dvh relative">
+    <footer className="w-full dark-bg text-primary pt-8 h-dvh relative" id='contact'>
       <div className="flex flex-col items-center w-full mt-[5rem] lg:mt-[3rem] lg:justify-center lg:h-[90%]">
 
         {/* Operating Hours (Now Above Contact Info) */}

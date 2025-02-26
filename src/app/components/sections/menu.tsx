@@ -11,7 +11,7 @@ export default async function Menu() {
   }
 
   return (
-    <div className="text-center min-h-screen bg-primarylights flex flex-col items-center justify-center gap-4 mx-[2rem]">
+    <div className="text-center min-h-screen bg-primarylights flex flex-col items-center justify-center gap-4 mx-[2rem]" id='menu'>
       {/* Menu Blurb */}
       <div className='max-w-2xl'>
         <p className="mb-6">{menuData.menuBlurb}</p>

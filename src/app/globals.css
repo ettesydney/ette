@@ -53,6 +53,10 @@ html, body {
   text-transform: uppercase;
 }
 
+*, html {
+  scroll-behavior: smooth !important;
+}
+
 button, .button {
   background: transparent ;
   border-color: var(--primary);

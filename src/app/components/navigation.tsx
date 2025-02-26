@@ -77,7 +77,7 @@ export default function Navigation() {
               <ul className="flex flex-col gap-4 p-4">
                 {navItems.map((item, index) => (
                   <li key={index} className="flex items-center justify-center p-1 gap-x-2 border-none">
-                    <Link href={item.href} className="flex items-center justify-center">
+                    <Link href={item.href} className="flex items-center justify-center" onClick={toggleMobileMenu}>
                       {item.name}
                     </Link>
                   </li>
