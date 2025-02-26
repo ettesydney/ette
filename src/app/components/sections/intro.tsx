@@ -31,7 +31,7 @@ export default async function Intro() {
             img={introData.mobileImage?.asset?.url} 
             alt={introData.mobileImage?.alt || 'Mobile Image'} 
             width={375} 
-            height={670} 
+            height={550} 
             className="absolute inset-0 object-cover w-full h-full"
           />
         </div>

@@ -11,11 +11,11 @@ export default async function WhatsOn() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center h-dvh lg:h-[70dvh] text-center bg-primarylight w-full" id='whats-on'>
+    <div className="flex flex-col items-center justify-center h-dvh lg:h-[90dvh] text-center bg-primarylight w-full mb-[5rem] lg:mb-0 lg:pb-[20rem]" id='whats-on'>
 
       {/* Events Grid (Visible on lg and above) */}
       {/* TODO: max 2 per row */}
-      <div className="hidden lg:grid grid-cols-[repeat(auto-fit,_390px)] gap-6 w-full justify-center">
+      <div className="hidden lg:grid grid-cols-[repeat(auto-fit,_390px)] gap-6 w-full justify-center mb-[2rem]">
         {whatsOnData.events?.map((event: any, index: number) => (
           <WhatsOnCard
             key={index}
@@ -48,10 +48,10 @@ export default async function WhatsOn() {
       </div>
 
       {/* Section Title */}
-      <h2 className="title mb-4 mx-[2rem] lg:mt-[5rem]">{whatsOnData.title}</h2>
+      <h2 className="title mb-4 lg:mb-[2rem] mt-[2rem] lg:mt-[5rem]">{whatsOnData.title}</h2>
 
       {/* Section Blurb */}
-      <p className="mb-6 mx-[2rem]">{whatsOnData.blurb}</p>
+      <p className="mb-6 max-w-3xl lg:ml-auto lg:mr-auto">{whatsOnData.blurb}</p>
     </div>
   );
 }

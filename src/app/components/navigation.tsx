@@ -5,8 +5,8 @@ import React, { useState, useEffect } from "react";
 import ImageHelper from "./helpers/imageHelper";
 import { client } from "@/sanity/lib/client";
 import { GENERIC_QUERY } from "@/sanity/lib/queries";
-import facebook from "../../../public/facebook-svgrepo-com.svg";
-import instagram from "../../../public/instagram-svgrepo-com.svg";
+import facebook from "../../../public/facebook-svgrepo-com-dark.svg";
+import instagram from "../../../public/instagram-svgrepo-com-dark.svg";
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -50,9 +50,9 @@ export default function Navigation() {
                   className="w-8 h-8"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="2"
+                  strokeWidth="1"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2 6h20M2 18h20"></path>
                 </svg>
               </span>
             </button>
@@ -95,12 +95,12 @@ export default function Navigation() {
               <div className="w-full flex flex-col items-center p-4">
                 {/* Social Media Links */}
                 <div className="flex items-center gap-4">
-                  <a href={'#'} target="_blank">
-                    <ImageHelper img={instagram} alt="Instagram" width={22} height={22} />
-                  </a>
-                  <a href={'#'} target="_blank">
-                    <ImageHelper img={facebook} alt="Facebook" width={20} height={20} />
-                  </a>
+                    <a href={'#'} target="_blank">
+                    <ImageHelper img={instagram} alt="Instagram" width={22} height={22} className="text-dark" />
+                    </a>
+                    <a href={'#'} target="_blank">
+                    <ImageHelper img={facebook} alt="Facebook" width={20} height={20} className="text-dark" />
+                    </a>
                 </div>
 
                 {/* Contact Information */}

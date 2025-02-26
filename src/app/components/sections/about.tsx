@@ -13,13 +13,13 @@ export default async function About() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen h-dvh lg:h-[80dvh] text-center bg-primarylight" id='about'>
-      <div className='flex flex-col items-center justify-center gap-4 mx-[2rem]'>
-       <div className="mb-[2rem] mx-[6rem]">
+    <div className="flex flex-col items-center justify-center h-dvh text-center bg-primarylight" id='about'>
+      <div className='flex flex-col items-center justify-center gap-4 lg:gap-8 mx-[2rem] lg:pt-[6rem]'>
+       <div className="mx-[6rem] lg:mb-[3rem]">
           <ImageHelper 
             img={aboutData.image?.asset?.url} 
             alt={aboutData.image?.alt || 'About Image'} 
-            width={300} 
+            width={350} 
             height={250} 
           />
         </div>

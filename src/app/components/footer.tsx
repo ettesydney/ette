@@ -9,10 +9,10 @@ export default async function Footer() {
 
   return (
     <footer className="w-full dark-bg text-primary pt-8 h-dvh relative">
-      <div className="flex flex-col items-center w-full mt-[5rem] lg:justify-center lg:h-[90%]">
+      <div className="flex flex-col items-center w-full mt-[5rem] lg:mt-[3rem] lg:justify-center lg:h-[90%]">
 
         {/* Operating Hours (Now Above Contact Info) */}
-        <div className="text-center mb-6 md:hidden">
+        <div className="text-center mb-6 lg:hidden">
           <ul>
             {siteData.hours.map((hour: string, index: number) => (
               <li key={index}>{hour}</li>
@@ -25,13 +25,13 @@ export default async function Footer() {
           <ImageHelper
             img={siteData.footerImage?.asset?.url}
             alt={siteData.footerImage?.alt || 'Primary Image'}
-            width={300}
+            width={350}
             height={200}
           />
         </div>
 
         {/* Contact Info (Now Below Operating Hours) */}
-        <div className="md:hidden text-center mb-6">
+        <div className="lg:hidden text-center mb-6">
           <ul>
             <li>{siteData.address}</li>
             <li>
@@ -43,7 +43,7 @@ export default async function Footer() {
           </ul>
         </div>
 
-        <div className="hidden md:block text-center mb-6">
+        <div className="hidden lg:block text-center mb-6 lg:mt-[2rem]">
           <ul>
             {siteData.hours.map((hour: string, index: number) => (
               <li key={index}>{hour}</li>
@@ -52,7 +52,7 @@ export default async function Footer() {
         </div>
 
         {/* Social Media Icons */}
-        <div className="flex items-center gap-4 mb-6">
+        <div className="flex items-center gap-4 mb-6 hidden lg:flex lg:mt-[2rem]">
           <a href={siteData.instagram} target='_blank'>
             <ImageHelper img={instagram} alt="Instagram" width={22} height={22} />
           </a>
@@ -64,22 +64,23 @@ export default async function Footer() {
       </div>
 
       {/* Bottom Row (Visible only on lg and above, Positioned at the bottom of the page) */}
-      <div className="lg:absolute lg:bottom-0 lg:w-full lg:flex lg:flex-row lg:items-end lg:justify-between lg:p-4 lg:gap-6 lg:h-auto">
+      <div className="absolute bottom-10 lg:bottom-0 w-full lg:flex lg:flex-row lg:items-end lg:justify-between lg:p-4 lg:gap-6 lg:h-auto">
         
         {/* Left Side - Join the Family Button */}
-        <div className="flex-1 text-center md:text-left">
+        <div className="flex-1 text-center lg:text-left lg:mb-2">
           <a className="button px-4 py-2 w-[200px]" href={siteData.joinTheFamilyLink} target="_blank">
             Join the Family
           </a>
         </div>
 
         {/* Center - Footer Logo (Now Always Centered) */}
-        <div className="flex-1 flex justify-center mt-[2rem] md:mt-0">
+        <div className="flex-1 flex justify-center mt-[2rem] lg:mt-0">
           <ImageHelper
             img={siteData.footerLogo?.asset?.url}
             alt={siteData.footerLogo?.alt || 'Footer Logo'}
             width={100}
             height={100}
+            className='relative top-[15px] lg:top-0'
           />
         </div>
 
