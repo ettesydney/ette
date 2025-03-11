@@ -128,3 +128,57 @@ button, .button {
     font-size: 0.8rem;
   }
 }
+
+
+
+
+
+/* Custom Mobile menu */
+
+.my-nav-button {
+  z-index: 100;
+}
+
+.menu-icon {
+  z-index: 10;
+  /* position: relative; */
+}
+
+
+.menu-icon span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--bar-bg, #000);
+  border-radius: 1px;
+  transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965);
+}
+
+.menu-icon span:first-of-type {
+  top: 0;
+}
+.menu-icon span:last-of-type {
+  bottom: 0;
+}
+/* .menu-icon.active span:first-of-type, */
+.menu-icon .menu-icon__cheeckbox.open + div span:first-of-type {
+  transform: rotate(45deg);
+  top: 5.5px;
+}
+
+.menu-icon__cheeckbox.open span:first-of-type {
+  transform: rotate(45deg);
+  top: 5.5px;
+}
+
+/* .menu-icon.active span:last-of-type, */
+.menu-icon__cheeckbox.open span:last-of-type {
+  transform: rotate(-45deg);
+  bottom: 14px;
+}
+
+.menu-icon__cheeckbox.open span:first-of-type,
+.menu-icon__cheeckbox.open span:last-of-type {
+  width: 26px;
+}
