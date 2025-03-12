@@ -105,6 +105,39 @@ button, .button {
   mix-blend-mode: difference;
 }
 
+.next-div-full > div {
+  width: 100%;
+  height:100%
+}
+
+/* .logo-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.logo {
+  mix-blend-mode: difference;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  z-index: 10;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0.5; 
+  pointer-events: none;
+} */
+
 .title {
   font-family: 'GT Alpina Extended Thin Italic';
   text-transform: initial;
@@ -175,7 +208,7 @@ button, .button {
 /* .menu-icon.active span:last-of-type, */
 .menu-icon__cheeckbox.open span:last-of-type {
   transform: rotate(-45deg);
-  bottom: 14px;
+  bottom: 15px;
 }
 
 .menu-icon__cheeckbox.open span:first-of-type,

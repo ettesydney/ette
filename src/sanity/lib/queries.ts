@@ -1,5 +1,5 @@
 export const HOMEPAGE_QUERY = `*[_type == "home"][0] {
-  primaryImage {
+  primaryImages[] {
     asset-> {
       url
     },

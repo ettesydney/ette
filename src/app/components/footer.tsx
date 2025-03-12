@@ -32,7 +32,7 @@ export default function Footer({ siteData }: FooterProps) {
       className="w-full min-h-screen dark-bg text-primary pt-8 lg:pt-0 flex flex-col items-center justify-center relative"
       id="contact"
     >
-      <div className="flex flex-col items-center w-full mt-[5rem] lg:mt-[3rem] lg:justify-center flex-grow lg:h-[90dvh]">
+      <div className="flex flex-col items-center w-full lg:mt-[3rem] lg:justify-center lg:flex-grow lg:min-h-[90dvh]">
         {/* Operating Hours (Mobile) */}
         <div className="text-center mb-6 lg:hidden">
           <ul>
@@ -81,7 +81,7 @@ export default function Footer({ siteData }: FooterProps) {
         </div>
 
         {/* Social Media Links (Desktop) */}
-        <div className="flex items-center gap-4 mb-6 hidden lg:flex lg:mt-[2rem]">
+        <div className="flex items-center gap-4 mb-6 hidden md:flex lg:my-[2rem]">
           {siteData.instagram && (
             <a href={siteData.instagram} target="_blank" rel="noopener noreferrer">
               <ImageHelper img={instagram} alt="Instagram" width={22} height={22} />
@@ -93,42 +93,27 @@ export default function Footer({ siteData }: FooterProps) {
             </a>
           )}
         </div>
-
-        {/* Join the Family (Mobile) */}
-        {siteData.joinTheFamilyLink && (
-          <div className="lg:hidden flex-1 text-center">
-            <a className="button px-4 py-2 w-[200px]" href={siteData.joinTheFamilyLink} target="_blank">
-              Join the Family
-            </a>
-          </div>
-        )}
       </div>
 
-      {/* Bottom Section (Pinned to Bottom on Desktop) */}
-      <div className="lg:mt-auto w-full lg:flex lg:flex-row lg:items-end lg:justify-between lg:p-4 lg:gap-6 lg:h-auto">
-        {/* Join the Family (Desktop) */}
-        {siteData.joinTheFamilyLink && (
-          <div className="hidden lg:block flex-1 text-center lg:text-left lg:mb-2">
-            <a className="button px-4 py-2 w-[200px]" href={siteData.joinTheFamilyLink} target="_blank">
-              Join the Family
-            </a>
-          </div>
-        )}
-
-        {/* Footer Logo - Now Stays at Bottom */}
-        {siteData.footerLogo?.asset?.url && (
-          <div className="flex-1 flex justify-center mb-[1rem] lg:mb-0 mt-[2rem] lg:mt-0">
+      <div className="w-full flex flex-col items-center lg:flex-row lg:items-end lg:justify-between lg:p-4 lg:gap-6 relative min-h-[120px]">
+        {/* Footer Logo - Always Centered */}
+        <div className="pb-4 lg:pb-0 lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2">
+          {siteData.footerLogo?.asset?.url && (
             <ImageHelper
               img={siteData.footerLogo.asset.url}
               alt={siteData.footerLogo.alt || 'Footer Logo'}
               width={100}
               height={100}
+              className="mx-auto"
             />
-          </div>
-        )}
+          )}
+        </div>
 
-        {/* Contact Info (Desktop Only) */}
-        <div className="flex-1 hidden lg:block text-right">
+        {/* Spacer to prevent pushing */}
+        <div className="flex-1 hidden lg:block"></div>
+
+        {/* Contact Info - Right-Aligned */}
+        <div className="flex-1 hidden lg:flex lg:justify-end text-right">
           <ul>
             <li>{siteData.address}</li>
             <li>
@@ -144,6 +129,7 @@ export default function Footer({ siteData }: FooterProps) {
           </ul>
         </div>
       </div>
+
     </footer>
   );
 }
