@@ -15,14 +15,14 @@ export default async function About() {
   return (
     <div className="flex flex-col items-center justify-center text-center bg-primarylight my-[8rem] mb-[6rem] lg:mt-0 dark-section" id='about'>
       <div className='flex flex-col items-center justify-center gap-4 lg:gap-8 mx-[2rem] lg:pt-[6rem]'>
-       <div className="mx-[6rem] lg:mb-[3rem]">
+       {/* <div className="mx-[6rem] lg:mb-[3rem]">
           <ImageHelper 
             img={aboutData.image?.asset?.url} 
             alt={aboutData.image?.alt || 'About Image'} 
             width={350} 
             height={250} 
           />
-        </div>
+        </div> */}
         <div>
           <h2 className="mb-2 mt-2 title">{aboutData.title}</h2>
         </div>

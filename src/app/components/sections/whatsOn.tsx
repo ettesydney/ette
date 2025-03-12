@@ -13,6 +13,11 @@ export default async function WhatsOn() {
   return (
     <div className="flex flex-col items-center justify-center text-center bg-primarylight w-full mb-[5rem] lg:mb-0 mt-[5rem] lg:mt-0 lg:py-[4rem]" id='whats-on'>
 
+    {/* Section Title */}
+      <h2 className="title mb-4 lg:mb-[2rem] mt-[2rem] lg:mt-[3rem]">{whatsOnData.title}</h2>
+
+      {/* Section Blurb */}
+      <p className="max-w-3xl px-8 lg:ml-auto lg:mr-auto mb-[5rem]">{whatsOnData.blurb}</p>
       {/* Events Grid (Visible on lg and above) */}
       {/* TODO: max 2 per row */}
       <div className="hidden lg:grid grid-cols-[repeat(auto-fit,_390px)] gap-6 w-full justify-center mb-[2rem]">
@@ -47,11 +52,7 @@ export default async function WhatsOn() {
         </div>
       </div>
 
-      {/* Section Title */}
-      <h2 className="title mb-4 lg:mb-[2rem] mt-[2rem] lg:mt-[5rem]">{whatsOnData.title}</h2>
-
-      {/* Section Blurb */}
-      <p className="mb-6 max-w-3xl lg:ml-auto lg:mr-auto px-8">{whatsOnData.blurb}</p>
+    
     </div>
   );
 }
