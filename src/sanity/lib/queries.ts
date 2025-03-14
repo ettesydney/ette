@@ -25,7 +25,10 @@ export const ABOUT_QUERY = `*[_type == "about"][0] {
 }`;
 
 export const MENU_QUERY = `*[_type == "menu"][0] {
-  title,
+  title[] {
+    title,
+    blurb
+  },
   menuBlurb,
   sections[] {
     title,

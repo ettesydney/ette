@@ -12,8 +12,25 @@ export default defineType({
   fields: [
     defineField({
       name: 'title',
-      title: 'Title',
-      type: 'string',
+      title: 'Title Section',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'title',
+              title: 'Title',
+              type: 'string',
+            }),
+            defineField({
+              name: 'blurb',
+              title: 'Blurb',
+              type: 'text',
+            }),
+          ],
+        },
+      ],
     }),
     defineField({
       name: 'menuBlurb',

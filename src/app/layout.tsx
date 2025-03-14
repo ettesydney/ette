@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import { getSiteData } from "@/sanity/lib/getSiteData";
+import StaticFooter from "./components/staticFooter";
 
 export const metadata: Metadata = {
   title: "ette Sydney",
@@ -24,6 +25,7 @@ export default async function RootLayout({
         <Header siteData={siteData} />
         {children}
         <Footer siteData={siteData} />
+        <StaticFooter siteData={siteData}/>
       </body>
     </html>
   );

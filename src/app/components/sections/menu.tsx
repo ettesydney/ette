@@ -13,14 +13,20 @@ export default async function Menu() {
   return (
     <div className="text-center bg-primarylights flex flex-col items-center justify-center gap-4 mx-[2rem] py-[4rem]" id='menu'>
       {/* Menu Blurb */}
+
+      <h2 className='title'>Menu</h2>
+
       <div className='max-w-2xl'>
         <p className="mb-6">{menuData.menuBlurb}</p>
       </div>
       
       {/* Menu Title */}
       <div className='lg:mb-[1rem]'>
-        {menuData.title.split(' ').map((word: string, index: number) => (
-          <h2 key={index} className="title mb-[-5px] ">{word}</h2>
+        {menuData.title.map((item: { title: string; blurb: string }, index: number) => (
+          <div key={index} className="mb-4 max-w-2xl">
+            <h2 className="title">{item.title}</h2>
+            <p className="blurb">{item.blurb}</p>
+          </div>
         ))}
       </div>
 

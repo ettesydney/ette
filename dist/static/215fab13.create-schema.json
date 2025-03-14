@@ -1,0 +1,388 @@
+[
+  {
+    "fields": [
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "headerLogo",
+        "type": "image"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "footerLogo",
+        "type": "image"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "footerImage",
+        "type": "image"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "bookNowLink",
+        "type": "url"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "subscribeLink",
+        "type": "url"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "instagram",
+        "type": "url",
+        "title": "Instagram URL"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "facebook",
+        "type": "url",
+        "title": "Facebook URL"
+      },
+      {
+        "name": "address",
+        "type": "string"
+      },
+      {
+        "name": "email",
+        "type": "string"
+      },
+      {
+        "name": "phone",
+        "type": "string",
+        "title": "Phone Number"
+      },
+      {
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "hours",
+        "type": "array",
+        "title": "Business Hours"
+      }
+    ],
+    "name": "generic",
+    "type": "document",
+    "title": "Site Information"
+  },
+  {
+    "fields": [
+      {
+        "of": [
+          {
+            "options": {
+              "hotspot": true
+            },
+            "type": "image"
+          }
+        ],
+        "name": "primaryImages",
+        "type": "array"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "mobileImage",
+        "type": "image"
+      },
+      {
+        "name": "blurb",
+        "type": "text"
+      }
+    ],
+    "name": "home",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "name": "blurb",
+        "type": "text"
+      }
+    ],
+    "name": "about",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "name": "blurb",
+                "type": "text"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "title",
+        "type": "array",
+        "title": "Title Section"
+      },
+      {
+        "name": "menuBlurb",
+        "type": "text"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "title",
+                "type": "string",
+                "title": "Section Title"
+              },
+              {
+                "of": [
+                  {
+                    "type": "string"
+                  }
+                ],
+                "name": "items",
+                "type": "array",
+                "title": "Menu Items"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "sections",
+        "type": "array",
+        "title": "Menu Sections"
+      },
+      {
+        "options": {
+          "accept": "application/pdf"
+        },
+        "name": "drinksMenu",
+        "type": "file",
+        "title": "Drinks Menu (PDF)"
+      }
+    ],
+    "name": "menu",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "name": "blurb",
+                "type": "text"
+              },
+              {
+                "name": "callToAction",
+                "type": "string",
+                "title": "Call to Action or Link"
+              },
+              {
+                "of": [
+                  {
+                    "fields": [
+                      {
+                        "description": "Describe the image for accessibility.",
+                        "name": "alt",
+                        "type": "string",
+                        "title": "Alt Text"
+                      }
+                    ],
+                    "type": "image"
+                  }
+                ],
+                "name": "images",
+                "type": "array"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "sections",
+        "type": "array",
+        "title": "Function Sections"
+      }
+    ],
+    "name": "functions",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "name": "blurb",
+        "type": "text"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "options": {
+                  "dateFormat": "YYYY-MM-DD"
+                },
+                "name": "date",
+                "type": "date"
+              },
+              {
+                "name": "title",
+                "type": "string",
+                "title": "Event Title"
+              },
+              {
+                "name": "blurb",
+                "type": "text",
+                "title": "Event Blurb"
+              },
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "fields": [
+                  {
+                    "description": "Describe the image for accessibility.",
+                    "name": "alt",
+                    "type": "string",
+                    "title": "Alt Text"
+                  }
+                ],
+                "name": "image",
+                "type": "image",
+                "title": "Event Image"
+              },
+              {
+                "name": "callToAction",
+                "type": "string",
+                "title": "Call to Action or Link"
+              },
+              {
+                "name": "callToActionText",
+                "type": "string",
+                "title": "Call to Action Text"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "events",
+        "type": "array",
+        "title": "What's On Events"
+      }
+    ],
+    "name": "whatsOn",
+    "type": "document",
+    "title": "What's On"
+  }
+]

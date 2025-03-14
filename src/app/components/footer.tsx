@@ -108,27 +108,8 @@ export default function Footer({ siteData }: FooterProps) {
             />
           )}
         </div>
-
-        {/* Spacer to prevent pushing */}
-        <div className="flex-1 hidden lg:block"></div>
-
-        {/* Contact Info - Right-Aligned */}
-        <div className="flex-1 hidden lg:flex lg:justify-end text-right">
-          <ul>
-            <li>{siteData.address}</li>
-            <li>
-              <a href={`mailto:${siteData.email}`} className="hover:underline">
-                {siteData.email}
-              </a>
-            </li>
-            <li>
-              <a href={`tel:${siteData.phone}`} className="hover:underline">
-                {siteData.phone}
-              </a>
-            </li>
-          </ul>
-        </div>
       </div>
+        
 
     </footer>
   );
