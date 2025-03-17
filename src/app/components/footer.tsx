@@ -29,7 +29,7 @@ type FooterProps = {
 export default function Footer({ siteData }: FooterProps) {
   return (
     <footer
-      className="w-full min-h-screen dark-bg text-primary pt-8 lg:pt-0 flex flex-col items-center justify-center relative"
+      className="w-full min-h-screen dark-bg text-primary pt-8 lg:pt-0 flex flex-col items-center justify-center relative dark-section"
       id="contact"
     >
       <div className="flex flex-col items-center w-full lg:mt-[3rem] lg:justify-center lg:flex-grow lg:min-h-[90dvh]">

@@ -1,4 +1,3 @@
-// src/app/page.tsx (Home page - remains a server component)
 import About from './components/sections/about';
 import Functions from './components/sections/functions';
 import Intro from './components/sections/intro';
@@ -9,13 +8,21 @@ export default function Home() {
 
   return (
     <div className="site-bg w-full">
-      <div className='h-dvh'>
+      <section data-section='dark' className='h-dvh dark-section'>
         <Intro />
-      </div>
-       <About />
-      <Menu />
-      <Functions />
-      <WhatsOn />
+      </section>
+      <section data-section='light' className='light-section'>
+        <About />
+      </section>
+      <section data-section='light' className='light-section'>
+        <Menu />
+      </section>
+      <section data-section='light' className='light-section'>
+        <Functions />
+      </section>
+      <section data-section='light' className='light-section'>
+        <WhatsOn />
+      </section>
     </div>
   );
 }

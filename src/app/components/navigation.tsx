@@ -53,7 +53,7 @@ export default function Navigation({siteData}: SiteInfoProps) {
 
           {/* Mobile Menu */}
           <div
-  className={`fixed top-0 left-0 h-dvh w-full site-bg text-dark transition-opacity duration-300 ease-in-out 
+            className={`fixed top-0 left-0 h-dvh w-full site-bg text-dark transition-opacity duration-300 ease-in-out 
               ${isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 delay-300 invisible"} lg:hidden z-50 flex flex-col justify-between overflow-y-auto`}
 >
             {/* Centered Menu Items */}
