@@ -18,9 +18,9 @@ export default async function WhatsOn() {
 
       {/* Section Blurb */}
       <p className="max-w-3xl px-8 lg:ml-auto lg:mr-auto mb-[5rem]">{whatsOnData.blurb}</p>
-      {/* Events Grid (Visible on lg and above) */}
-      {/* TODO: max 2 per row */}
-      <div className="hidden lg:grid grid-cols-[repeat(auto-fit,_390px)] gap-6 w-full justify-center mb-[2rem]">
+      
+      {/* Events Grid (Visible on lg and above) - Updated to max 2 per row */}
+      <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-[800px] justify-center mb-[2rem]">
         {whatsOnData.events?.map((event: any, index: number) => (
           <WhatsOnCard
             key={index}
@@ -51,9 +51,6 @@ export default async function WhatsOn() {
           </SwiperHelper>
         </div>
       </div>
-
-    
     </div>
   );
 }
-

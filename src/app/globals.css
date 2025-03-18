@@ -129,11 +129,11 @@ button, .button {
   width:100%;
   animation: fade-near-end linear forwards;
   animation-timeline: scroll(block);
-  animation-range: 0% 10%;
+  animation-range: 20% 20%;
 }
 
 .sneak-logo > svg {
-  fill: var(--dark-background);
+  fill: #03170d;
   position: absolute;
   left: 1rem;
   z-index: 40;
@@ -214,9 +214,11 @@ button, .button {
   display: block;
   width: 100%;
   height: 1px;
-  background-color: var(--bar-bg, #000);
+  background-color: #fce7f2;
   border-radius: 1px;
-  transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965);
+  transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965),
+              background-color 0.3s ease;
+  /* Removing mix-blend-mode since it's not working */
 }
 
 .menu-icon span:first-of-type {
@@ -225,18 +227,19 @@ button, .button {
 .menu-icon span:last-of-type {
   bottom: 0;
 }
-/* .menu-icon.active span:first-of-type, */
-.menu-icon .menu-icon__cheeckbox.open + div span:first-of-type {
-  transform: rotate(45deg);
-  top: 5.5px;
+
+/* Add color transition to open state */
+.menu-icon .menu-icon__cheeckbox.open + div span,
+.menu-icon__cheeckbox.open span {
+  background-color: #000; /* Change to black when open */
 }
 
+.menu-icon .menu-icon__cheeckbox.open + div span:first-of-type,
 .menu-icon__cheeckbox.open span:first-of-type {
   transform: rotate(45deg);
   top: 5.5px;
 }
 
-/* .menu-icon.active span:last-of-type, */
 .menu-icon__cheeckbox.open span:last-of-type {
   transform: rotate(-45deg);
   bottom: 15px;
