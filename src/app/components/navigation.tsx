@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ImageHelper from "./helpers/imageHelper";
+import { useNav } from "../context/navContext" // Import NavContext
 import facebook from "../../../public/facebook-svgrepo-com-dark.svg";
 import instagram from "../../../public/instagram-svgrepo-com-dark.svg";
 
@@ -14,12 +15,8 @@ type SiteInfoProps = {
   };
 };
 
-export default function Navigation({siteData}: SiteInfoProps) {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+export default function Navigation({ siteData }: SiteInfoProps) {
+  const { isNavOpen, toggleNav, closeNav } = useNav(); // Use NavContext
 
   // Navigation items array
   const navItems = [
@@ -37,16 +34,16 @@ export default function Navigation({siteData}: SiteInfoProps) {
           <div className="lg:hidden pr-2">
             <button
               className="my-nav-button relative ml-auto h-6 max-h-[40px] w-8 max-w-[40px] select-none rounded-lg text-center align-middle transition-all border-none"
-              onClick={toggleMobileMenu}
+              onClick={toggleNav}
               type="button"
             >
               <div className="menu-icon">
-                  <div className={`menu-icon__cheeckbox ${isMobileMenuOpen ? "open" : ""}`}>
-                    <div>
-                        <span></span>
-                        <span></span>
-                    </div>
+                <div className={`menu-icon__cheeckbox ${isNavOpen ? "open" : ""}`}>
+                  <div>
+                    <span></span>
+                    <span></span>
                   </div>
+                </div>
               </div>     
             </button>
           </div>
@@ -54,41 +51,40 @@ export default function Navigation({siteData}: SiteInfoProps) {
           {/* Mobile Menu */}
           <div
             className={`fixed top-0 left-0 h-dvh w-full site-bg text-dark transition-opacity duration-300 ease-in-out 
-              ${isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 delay-300 invisible"} lg:hidden z-50 flex flex-col justify-between overflow-y-auto`}
->
+              ${isNavOpen ? "opacity-100 visible" : "opacity-0 delay-300 invisible"} lg:hidden z-50 flex flex-col justify-between overflow-y-auto`}
+          >
             {/* Centered Menu Items */}
             <div className="flex flex-col items-center justify-center flex-grow text-lg">
               <ul className="flex flex-col gap-4 p-4">
                 {navItems.map((item, index) => (
                   <li key={index} className="flex items-center justify-center p-1 gap-x-2 border-none">
-                    <Link href={item.href} className="flex items-center justify-center" onClick={toggleMobileMenu}>
+                    <Link href={item.href} className="flex items-center justify-center" onClick={closeNav}>
                       {item.name}
                     </Link>
                   </li>
                 ))}
                 <li className="flex items-center justify-center text-center">
-                    <a href={"#"} className="px-4 py-2 border w-[200px]" style={{ borderColor: 'var(--bg-primary)' }}>
+                  <a href={"#"} className="px-4 py-2 border w-[200px]" style={{ borderColor: 'var(--bg-primary)' }} onClick={closeNav}>
                     Book
-                    </a>
+                  </a>
                 </li>
               </ul>
             </div>
 
             {/* Site Data (Pinned to Bottom) */}
-            
-              <div className="w-full flex flex-col items-center p-4">
-                {/* Social Media Links */}
-                <div className="flex items-center gap-4">
-                    <a href={'#'} target="_blank">
-                    <ImageHelper img={instagram} alt="Instagram" width={22} height={22} className="text-dark" />
-                    </a>
-                    <a href={'#'} target="_blank">
-                    <ImageHelper img={facebook} alt="Facebook" width={20} height={20} className="text-dark" />
-                    </a>
-                </div>
+            <div className="w-full flex flex-col items-center p-4">
+              {/* Social Media Links */}
+              <div className="flex items-center gap-4">
+                <a href={'#'} target="_blank">
+                  <ImageHelper img={instagram} alt="Instagram" width={22} height={22} className="text-dark" />
+                </a>
+                <a href={'#'} target="_blank">
+                  <ImageHelper img={facebook} alt="Facebook" width={20} height={20} className="text-dark" />
+                </a>
+              </div>
 
-                {/* Contact Information */}
-                <div className="mt-4 text-center">
+              {/* Contact Information */}
+              <div className="mt-4 text-center">
                 <ul>
                   <li>{siteData?.address}</li>
                   <li>
@@ -102,11 +98,9 @@ export default function Navigation({siteData}: SiteInfoProps) {
                     </a>
                   </li>
                 </ul>
-                </div>
               </div>
-            
+            </div>
           </div>
-
 
           {/* Desktop Menu */}
           <div className="hidden lg:block">

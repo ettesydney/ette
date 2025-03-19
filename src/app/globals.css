@@ -30,6 +30,7 @@
   --primary: #fce7f2;
   --primary-light: #FDF2F8;
   --dark-background: #352E2E;
+  --inverse-background: #03170d;
 
 }
 
@@ -103,6 +104,9 @@ button, .button {
 .dark-bg {
   background-color: var(--dark-background);
 }
+.inverse-bg {
+  background-color: var(--inverse-background);
+}
 
 .svg-color {
   color: var(--text-color);
@@ -129,8 +133,10 @@ button, .button {
   width:100%;
   animation: fade-near-end linear forwards;
   animation-timeline: scroll(block);
-  animation-range: 20% 20%;
+  animation-range: 15% 20%;
 }
+
+
 
 .sneak-logo > svg {
   fill: #03170d;
@@ -140,35 +146,6 @@ button, .button {
   width: 135px;
 }
 
-
-/* .logo-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.logo {
-  mix-blend-mode: difference;
-  position: absolute;
-  top: 10px;
-  left: 20px;
-  z-index: 10;
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: white;
-  opacity: 0.5; 
-  pointer-events: none;
-} */
-
 .title {
   font-family: 'GT Alpina Extended Thin Italic';
   text-transform: initial;
@@ -177,23 +154,15 @@ button, .button {
 
 }
 
+h3.title {
+  font-size: 2.5rem;
+}
+
 .custom-box-border {
   border: 1px solid var(--primary);
   padding: 2px;
   max-width: 200px
 }
-
-@media (max-width: 768px) {
-  /* Custom styles for medium screens and up */
-  .title{
-    font-size: 2.5rem;
-  }
-  body {
-    font-size: 0.8rem;
-  }
-}
-
-
 
 
 
@@ -207,7 +176,6 @@ button, .button {
   z-index: 10;
   /* position: relative; */
 }
-
 
 .menu-icon span {
   position: absolute;
@@ -248,4 +216,78 @@ button, .button {
 .menu-icon__cheeckbox.open span:first-of-type,
 .menu-icon__cheeckbox.open span:last-of-type {
   width: 26px;
+}
+
+/* fix logo transition */
+
+@media (max-height: 900px) {
+  .sneak-logo {
+    animation-range: 5% 16%;
+}
+}
+ @media (max-height: 800px) {
+    .sneak-logo {
+      animation-range: 5% 14%;
+  }
+}
+@media (max-height: 700px) {
+    .sneak-logo {
+      animation-range: 5% 13%;
+  }
+}
+@media (max-height: 600px) {
+    .sneak-logo {
+      animation-range: 5% 11%;
+  }
+}
+@media (max-height: 500px) {
+    .sneak-logo {
+      animation-range: 5% 9%;
+  }
+}
+@media (max-height: 400px) {
+    .sneak-logo {
+      animation-range: 5% 7%;
+  }
+}
+
+
+@media (max-width: 768px) {
+  /* Custom styles for medium screens and up */
+  .title{
+    font-size: 2.5rem;
+  }
+  h3.title{
+    font-size: 1.5rem;
+  }
+  body {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo > img, .sneak-logo > svg {
+    width: 100px;
+  }
+  .sneak-logo > svg {
+    top: -9px;
+  }
+}
+
+@media (max-width: 470px) {
+  .logo > img, .sneak-logo > svg {
+    width: 80px;
+  }
+  .sneak-logo > svg {
+    top: -14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .logo > img, .sneak-logo > svg {
+    width: 60px;
+  }
+  .sneak-logo > svg {
+    top: -18px;
+  }
 }

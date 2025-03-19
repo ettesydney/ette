@@ -4,6 +4,7 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import { getSiteData } from "@/sanity/lib/getSiteData";
 import StaticFooter from "./components/staticFooter";
+import { NavProvider } from "./context/navContext";
 
 export const metadata: Metadata = {
   title: "ette Sydney",
@@ -22,10 +23,13 @@ export default async function RootLayout({
     <html lang="en">
       <body className={'antialiased site-bg'}>
         {/* Pass siteData as props */}
-        <Header siteData={siteData} />
-        {children}
-        <Footer siteData={siteData} />
-        <StaticFooter siteData={siteData}/>
+        <NavProvider>
+
+          <Header siteData={siteData} />
+          {children}
+          <Footer siteData={siteData} />
+          <StaticFooter siteData={siteData}/>
+        </NavProvider>
       </body>
     </html>
   );

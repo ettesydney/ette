@@ -24,7 +24,7 @@ export default async function Menu() {
       <div className='lg:mb-[1rem]'>
         {menuData.title.map((item: { title: string; blurb: string }, index: number) => (
           <div key={index} className="mb-4 max-w-2xl">
-            <h2 className="title">{item.title}</h2>
+            <h3 className="title">{item.title}</h3>
             <p className="blurb">{item.blurb}</p>
           </div>
         ))}
