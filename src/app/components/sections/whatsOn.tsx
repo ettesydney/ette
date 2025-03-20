@@ -11,13 +11,13 @@ export default async function WhatsOn() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center text-center bg-primarylight w-full my-[5rem] ">
+    <div className="flex flex-col items-center justify-center text-center bg-primarylight w-full my-[5rem] lg:my-[10rem]">
 
     {/* Section Title */}
       <h2 className="title mb-4 mx-[2rem]">{whatsOnData.title}</h2>
 
       {/* Section Blurb */}
-      <p className="max-w-3xl mb-8 mx-[2rem]">{whatsOnData.blurb}</p>
+      <p className="max-w-3xl mb-8 lg:mb-16 mx-[2rem]">{whatsOnData.blurb}</p>
       
       {/* Events Grid (Visible on lg and above) - Updated to max 2 per row */}
       <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-[800px] justify-center mb-[2rem]">
