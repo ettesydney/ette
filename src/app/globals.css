@@ -1,3 +1,4 @@
+@import url("https://cdn.skypack.dev/sanitize.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -212,35 +213,79 @@ h3.title {
 }
 
 /* fix logo transition */
-
+@media (max-height: 1200px) {
+  .sneak-logo {
+    animation-range: 5% 20%;
+  }
+}
+@media (max-height: 1100px) {
+  .sneak-logo {
+    animation-range: 5% 18%;
+  }
+}
+@media (max-height: 1000px) {
+  .sneak-logo {
+    animation-range: 5% 17%;
+  }
+}
 @media (max-height: 900px) {
   .sneak-logo {
     animation-range: 5% 16%;
+  }
 }
+@media (max-height: 900px) {
+  .sneak-logo {
+    animation-range: 5% 16%;
+  }
 }
- @media (max-height: 800px) {
-    .sneak-logo {
-      animation-range: 5% 14%;
+@media (max-height: 850px) {
+  .sneak-logo {
+    animation-range: 5% 15%;
+  }
+}
+@media (max-height: 800px) {
+  .sneak-logo {
+    animation-range: 5% 14%;
+  }
+}
+@media (max-height: 750px) {
+  .sneak-logo {
+    animation-range: 5% 13%;
   }
 }
 @media (max-height: 700px) {
-    .sneak-logo {
-      animation-range: 5% 13%;
+  .sneak-logo {
+    animation-range: 5% 12%;
+  }
+}
+@media (max-height: 650px) {
+  .sneak-logo {
+    animation-range: 5% 11%;
   }
 }
 @media (max-height: 600px) {
-    .sneak-logo {
-      animation-range: 5% 11%;
+  .sneak-logo {
+    animation-range: 5% 10%;
+  }
+}
+@media (max-height: 550px) {
+  .sneak-logo {
+    animation-range: 5% 9%;
   }
 }
 @media (max-height: 500px) {
-    .sneak-logo {
-      animation-range: 5% 9%;
+  .sneak-logo {
+    animation-range: 5% 8%;
+  }
+}
+@media (max-height: 450px) {
+  .sneak-logo {
+    animation-range: 5% 7%;
   }
 }
 @media (max-height: 400px) {
-    .sneak-logo {
-      animation-range: 5% 7%;
+  .sneak-logo {
+    animation-range: 5% 6%;
   }
 }
 

@@ -13,8 +13,8 @@ export default async function About() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center text-center bg-primarylight mt-[8rem] lg:mt-0 min-h-[400px] lg:min-h-[600px]" id='about'>
-      <div className='flex flex-col items-center justify-center gap-4 lg:gap-8 mx-[2rem] lg:pt-[6rem]'>
+    <div className="text-center bg-primarylight my-[5rem] mb-[1rem] mx-[2rem] ">
+      <div className='flex flex-col items-center justify-center gap-4 lg:gap-8 lg:pt-[6rem]'>
         <div>
           <h2 className="mb-2 mt-2 title">{aboutData.title}</h2>
         </div>

@@ -13,7 +13,7 @@ export default async function Intro() {
   }
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen text-center dark-bg w-full dark-section ">
+    <div className="relative flex flex-col items-center justify-center h-dvh text-center dark-bg w-full dark-section">
       <SneakyLogo />
 
       {/* Fullscreen Swiper */}
@@ -40,7 +40,7 @@ export default async function Intro() {
           alt={introData.mobileImage?.alt || 'Mobile Image'} 
           width={375} 
           height={550} 
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full"
         />
       </div>
 

@@ -11,8 +11,7 @@ export default async function Menu() {
   }
 
   return (
-    <div className="text-center bg-primarylights flex flex-col items-center justify-center gap-4 mx-[2rem] py-[4rem]" id='menu'>
-      {/* Menu Blurb */}
+    <div className="text-center bg-primarylights flex flex-col items-center justify-center gap-4 mt-[4rem] mx-[2rem] " >
 
       <h2 className='title'>Menu</h2>
 

@@ -8,19 +8,19 @@ export default function Home() {
 
   return (
     <div className="site-bg w-full">
-      <section data-section='dark' className='h-dvh dark-section'>
+      <section className='h-dvh dark-section'>
         <Intro />
       </section>
-      <section data-section='light' className='light-section'>
+      <section id='about' className='pt-[3rem]'>
         <About />
       </section>
-      <section data-section='light' className='light-section'>
+      <section id='menu' className='pt-[3rem]'>
         <Menu />
       </section>
-      <section data-section='light' className='light-section'>
+      <section id='functions'  className='pt-[3rem]'>
         <Functions />
       </section>
-      <section data-section='light' className='light-section'>
+      <section  id='whats-on'  className='pt-[3rem]'>
         <WhatsOn />
       </section>
     </div>
