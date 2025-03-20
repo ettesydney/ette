@@ -43,7 +43,7 @@ export default function Footer({ siteData }: FooterProps) {
 
           {/* Footer Image - larger starting size but still responsive */}
           {siteData.footerImage?.asset?.url && (
-            <div className="mb-4 px-4 flex justify-center w-full">
+            <div className="mb-4 px-4 flex justify-center w-full mb-10">
               <ImageHelper
                 img={siteData.footerImage.asset.url}
                 alt={siteData.footerImage.alt || 'Primary Image'}
