@@ -30,80 +30,96 @@ export default function Navigation({ siteData }: SiteInfoProps) {
   ];
 
   return (
-    <div>
-      <nav className="lg:mix-blend-difference text-primary block w-full max-w-screen py-4 mx-auto sticky top-3 lg:px-4 z-[10]">
-        <div className="container flex flex-wrap items-center justify-between mx-auto">
-          <div className="lg:hidden pt-2 pr-4">
-            <button
-              className="my-nav-button relative ml-auto h-6 max-h-[15px] w-8 max-w-[40px] select-none rounded-lg text-center align-middle transition-all border-none "
-              onClick={toggleNav}
-              type="button"
-            >
-              <div className="menu-icon">
-                <div className={`menu-icon__cheeckbox ${isNavOpen ? "open" : ""}`}>
-                  <div>
-                    <span></span>
-                    <span></span>
-                  </div>
-                </div>
-              </div>     
-            </button>
-          </div>
-
-          {/* Mobile Menu */}
-          <div
-            className={`fixed top-0 left-0 h-dvh w-full site-bg text-dark transition-opacity duration-300 ease-in-out 
-              ${isNavOpen ? "opacity-100 visible" : "opacity-0 delay-300 invisible"} lg:hidden z-50 flex flex-col justify-between overflow-y-auto`}
+    <nav>
+      <div className="mix-blend-difference z-[5]">
+        <div className="lg:hidden absolute top-[17px] right-[20px]">
+          <button
+            className={`my-nav-button relative ml-auto h-6 max-h-[15px] w-8 max-w-[40px] select-none rounded-lg text-center align-middle transition-all border-none p-2 ${isNavOpen ? "hidden" : ""}`}
+            onClick={toggleNav}
+            type="button"
           >
-            {/* Centered Menu Items */}
-            <div className="flex flex-col items-center justify-center flex-grow text-lg">
-              <ul className="flex flex-col gap-4 p-4">
-                {navItems.map((item, index) => (
-                  <li key={index} className="flex items-center justify-center p-1 gap-x-2 border-none">
-                    <Link href={item.href} className="flex items-center justify-center" onClick={closeNav}>
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-                <li className="flex items-center justify-center text-center">
-                  <a href={"#"} className="px-4 py-2 border w-[200px]" style={{ borderColor: 'var(--bg-primary)' }} onClick={closeNav}>
-                    Book
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Site Data (Pinned to Bottom) */}
-            <div className="w-full flex flex-col items-center p-4">
-              {/* Social Media Links */}
-              <div className="flex items-center gap-4">
-                <a href={siteData.instagram} target="_blank">
-                  <ImageHelper img={instagram} alt="Instagram" width={22} height={22} className="text-dark" />
-                </a>
-                <a href={siteData.facebook} target="_blank">
-                  <ImageHelper img={facebook} alt="Facebook" width={20} height={20} className="text-dark" />
-                </a>
+            <div className='menu-icon'>
+              <div className={`menu-icon__cheeckbox`}>
+                <div>
+                  <span></span>
+                  <span></span>
+                </div>
               </div>
-
-              {/* Contact Information */}
-              <div className="mt-4 text-center">
-                <ul>
-                  <li>{siteData?.address}</li>
-                  <li>
-                    <a href={`mailto:${siteData?.email}`} className="hover:underline">
-                      {siteData?.email}
-                    </a>
-                  </li>
-                  <li>
-                    <a href={`tel:${siteData?.phone}`} className="hover:underline">
-                      {siteData?.phone}
-                    </a>
-                  </li>
-                </ul>
+            </div>     
+          </button>
+        </div>
+      </div>
+      <div
+        className={`fixed top-0 left-0 h-dvh w-full site-bg text-dark transition-opacity duration-300 ease-in-out 
+          ${isNavOpen ? "opacity-100 visible" : "opacity-0 delay-300 invisible"} lg:hidden z-50 flex flex-col justify-between overflow-y-auto z-[3]`}
+      >
+        {/* Centered Menu Items */}
+        <div className="lg:hidden absolute top-[20px] right-[20px] z-[6]">
+          <button
+            className={`my-nav-button relative ml-auto h-6 max-h-[15px] w-8 max-w-[40px] select-none rounded-lg text-center align-middle transition-all border-none p-2 ${isNavOpen ? '' : "hidden"}`}
+            onClick={closeNav}
+            type="button"
+          >
+            <div className='menu-icon'>
+              <div className={`menu-icon__cheeckbox open`}>
+                <div>
+                  <span></span>
+                  <span></span>
+                </div>
               </div>
-            </div>
+            </div>     
+          </button>
+        </div>
+        <div className="flex flex-col items-center justify-center flex-grow text-lg">
+          <ul className="flex flex-col gap-4 p-4">
+            {navItems.map((item, index) => (
+              <li key={index} className="flex items-center justify-center p-1 gap-x-2 border-none">
+                <Link href={item.href} className="flex items-center justify-center" onClick={closeNav}>
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+            <li className="flex items-center justify-center text-center">
+              <a href={"#"} className="px-4 py-2 border w-[200px]" style={{ borderColor: 'var(--bg-primary)' }} onClick={closeNav}>
+                Book
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Site Data (Pinned to Bottom) */}
+        <div className="w-full flex flex-col items-center p-4">
+          {/* Social Media Links */}
+          <div className="flex items-center gap-4">
+            <a href={siteData.instagram} target="_blank">
+              <ImageHelper img={instagram} alt="Instagram" width={22} height={22} className="text-dark" />
+            </a>
+            <a href={siteData.facebook} target="_blank">
+              <ImageHelper img={facebook} alt="Facebook" width={20} height={20} className="text-dark" />
+            </a>
           </div>
 
+          {/* Contact Information */}
+          <div className="mt-4 text-center">
+            <ul>
+              <li>{siteData?.address}</li>
+              <li>
+                <a href={`mailto:${siteData?.email}`} className="hover:underline">
+                  {siteData?.email}
+                </a>
+              </li>
+              <li>
+                <a href={`tel:${siteData?.phone}`} className="hover:underline">
+                  {siteData?.phone}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div className="mix-blend-difference text-primary block w-full max-w-screen py-4 mx-auto sticky top-3 lg:px-4 z-[10]">
+        <div className="container flex flex-wrap items-center justify-between mx-auto">
           {/* Desktop Menu */}
           <div className="hidden lg:block">
             <ul className="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-3">
@@ -120,7 +136,7 @@ export default function Navigation({ siteData }: SiteInfoProps) {
             </ul>
           </div>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 }

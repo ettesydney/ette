@@ -168,10 +168,6 @@ h3.title {
 
 /* Custom Mobile menu */
 
-.my-nav-button {
-  z-index: 100;
-}
-
 .menu-icon {
   z-index: 10;
   /* position: relative; */
@@ -184,9 +180,6 @@ h3.title {
   height: 1px;
   background-color: #fce7f2;
   border-radius: 1px;
-  transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965),
-              background-color 0.3s ease;
-  /* Removing mix-blend-mode since it's not working */
 }
 
 .menu-icon span:first-of-type {
