@@ -32,7 +32,7 @@ export default async function Menu() {
 
       {/* Menu Sections */}
       {menuData.sections?.map((section: any, index: number) => (
-        <div key={index} className="mb-6">
+        <div key={index} className="mb-6 max-w-2xl">
           {/* Section Title */}
           <h3 className="mb-2">{section.title}</h3>
           
@@ -48,7 +48,7 @@ export default async function Menu() {
 
       {/* Drinks Menu PDF Link */}
       {menuData.drinksMenu?.asset?.url && (
-        <div className="mt-1">
+        <div className="mt-1 max-w-2xl">
           <a 
             href={menuData.drinksMenu.asset.url} 
             target="_blank" 

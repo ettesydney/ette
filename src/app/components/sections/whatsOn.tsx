@@ -11,7 +11,7 @@ export default async function WhatsOn() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center text-center bg-primarylight w-full mb-[5rem] lg:mb-0 mt-[5rem] lg:mt-0 lg:py-[4rem] min-h-[400px]" id='whats-on'>
+    <div className="flex flex-col items-center justify-center text-center bg-primarylight w-full mb-[5rem] lg:mb-0 mt-[5rem] lg:mt-0 lg:pt-0 lg:py-[4rem] min-h-[400px] lg:min-h-[90dvh] lg:mt-0" id='whats-on'>
 
     {/* Section Title */}
       <h2 className="title mb-4 lg:mb-[2rem] pt-[4rem] md:pt-0 mt-[2rem] lg:mt-[3rem]">{whatsOnData.title}</h2>
