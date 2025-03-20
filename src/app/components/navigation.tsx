@@ -31,9 +31,9 @@ export default function Navigation({ siteData }: SiteInfoProps) {
     <div>
       <nav className="lg:mix-blend-difference text-primary block w-full max-w-screen py-4 mx-auto sticky top-3 lg:px-4 z-[10]">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
-          <div className="lg:hidden pr-2">
+          <div className="lg:hidden pt-2 pr-4">
             <button
-              className="my-nav-button relative ml-auto h-6 max-h-[40px] w-8 max-w-[40px] select-none rounded-lg text-center align-middle transition-all border-none"
+              className="my-nav-button relative ml-auto h-6 max-h-[15px] w-8 max-w-[40px] select-none rounded-lg text-center align-middle transition-all border-none "
               onClick={toggleNav}
               type="button"
             >

@@ -24,7 +24,7 @@ export default async function Menu() {
       <div className='lg:mb-[1rem]'>
         {menuData.title.map((item: { title: string; blurb: string }, index: number) => (
           <div key={index} className="mb-4 max-w-2xl">
-            <h3 className="title">{item.title}</h3>
+            <h3 className={index !== 0 ? 'mt-6 title' : 'title'}>{item.title}</h3>
             <p className="blurb">{item.blurb}</p>
           </div>
         ))}
@@ -61,7 +61,7 @@ export default async function Menu() {
       )}
       
       {siteData.bookNowLink && (
-        <div className="lg:mb-0 mb-[4rem]">
+        <div className="lg:mb-0 mb-[2rem]">
           <a 
             href={siteData.bookNowLink} 
             target="_blank" 

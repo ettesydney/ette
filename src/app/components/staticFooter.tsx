@@ -11,7 +11,7 @@ export default function StaticFooter({ siteData }: StaticFooterProps) {
   return (
     <div className="absolute bottom-0 w-full mix-blend-difference text-primary px-4 pb-4">
       <div className="flex justify-between items-end w-full"> {/* Changed items-center to items-end */}
-        <div className=""> {/* Removed alignment classes here */}
+        <div className="hidden lg:block"> {/* Removed alignment classes here */}
           <a 
             href={siteData.subscribeLink} 
             target="_blank" 
