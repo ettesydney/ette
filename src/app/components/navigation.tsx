@@ -12,6 +12,8 @@ type SiteInfoProps = {
     address: string;
     email: string;
     phone: string;
+    instagram: string;
+    facebook: string;
   };
 };
 
@@ -75,10 +77,10 @@ export default function Navigation({ siteData }: SiteInfoProps) {
             <div className="w-full flex flex-col items-center p-4">
               {/* Social Media Links */}
               <div className="flex items-center gap-4">
-                <a href={'#'} target="_blank">
+                <a href={siteData.instagram} target="_blank">
                   <ImageHelper img={instagram} alt="Instagram" width={22} height={22} className="text-dark" />
                 </a>
-                <a href={'#'} target="_blank">
+                <a href={siteData.facebook} target="_blank">
                   <ImageHelper img={facebook} alt="Facebook" width={20} height={20} className="text-dark" />
                 </a>
               </div>

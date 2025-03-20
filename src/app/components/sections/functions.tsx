@@ -14,7 +14,7 @@ export default async function Functions() {
     <div className="flex flex-col items-center justify-center text-center px-4 md:px-8 lg:px-16 py-[4rem]" id='functions'>
       {/* Function Sections */}
       {functionsData.sections?.map((section: any, index: number) => (
-        <div key={index} className="w-full"> {/* Full width container */}
+        <div key={index} className="w-full mt-[2rem] md:mt-0"> {/* Full width container */}
           {/* Swiper Container - Ensuring Visibility */}
           <div className="w-full lg:mx-auto max-w-[800px] lg:mb-[6rem] md:ml-auto md:mr-auto"> {/* Adjusted for better responsiveness */}
             <SwiperHelper>

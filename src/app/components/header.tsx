@@ -7,6 +7,8 @@ type HeaderProps = {
     address: string;
     email: string;
     phone: string;
+    instagram: string;
+    facebook: string;
     headerLogo?: {
       asset?: {
         url: string;
