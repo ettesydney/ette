@@ -31,8 +31,8 @@ export default function Navigation({ siteData }: SiteInfoProps) {
 
   return (
     <nav>
-      <div className="mix-blend-difference z-[5]">
-        <div className="lg:hidden absolute top-[17px] right-[20px]">
+      <div className="mix-blend-difference z-[5] lg:hidden absolute top-[17px] right-[20px]">
+        <div className="">
           <button
             className={`my-nav-button relative ml-auto h-6 max-h-[15px] w-8 max-w-[40px] select-none rounded-lg text-center align-middle transition-all border-none p-2 ${isNavOpen ? "hidden" : ""}`}
             onClick={toggleNav}
@@ -54,7 +54,7 @@ export default function Navigation({ siteData }: SiteInfoProps) {
           ${isNavOpen ? "opacity-100 visible" : "opacity-0 delay-300 invisible"} lg:hidden z-50 flex flex-col justify-between overflow-y-auto z-[3]`}
       >
         {/* Centered Menu Items */}
-        <div className="lg:hidden absolute top-[20px] right-[20px] z-[6]">
+        <div className="lg:hidden absolute top-[19px] right-[17px] z-[6]">
           <button
             className={`my-nav-button relative ml-auto h-6 max-h-[15px] w-8 max-w-[40px] select-none rounded-lg text-center align-middle transition-all border-none p-2 ${isNavOpen ? '' : "hidden"}`}
             onClick={closeNav}
