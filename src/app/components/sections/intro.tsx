@@ -1,5 +1,5 @@
-import { client } from '@/sanity/lib/client';
-import { HOMEPAGE_QUERY } from '@/sanity/lib/queries';
+import { client } from '../../../../sanity/lib/client';
+import { HOMEPAGE_QUERY } from '../../../../sanity/lib/queries';
 import ImageHelper from '../helpers/imageHelper';
 import TextTicker from '../helpers/textTicker';
 import SwiperHelper from '../helpers/swiperHelper';

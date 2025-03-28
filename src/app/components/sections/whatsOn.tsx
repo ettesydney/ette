@@ -1,5 +1,5 @@
-import { client } from '@/sanity/lib/client';
-import { WHATS_ON_QUERY } from '@/sanity/lib/queries';
+import { client } from '../../../../sanity/lib/client';
+import { WHATS_ON_QUERY } from '../../../../sanity/lib/queries';
 import WhatsOnCard from '../whatsOnCard';
 import SwiperHelper from '../helpers/swiperHelper';
 

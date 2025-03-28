@@ -1,6 +1,5 @@
-import { client } from '@/sanity/lib/client';
-import { ABOUT_QUERY } from '@/sanity/lib/queries';
-import ImageHelper from '../helpers/imageHelper';
+import { client } from "../../../../sanity/lib/client";
+import { ABOUT_QUERY } from "../../../../sanity/lib/queries";
 
 export default async function About() {
   const aboutData = await client.fetch(ABOUT_QUERY);

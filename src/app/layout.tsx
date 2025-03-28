@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
-import { getSiteData } from "@/sanity/lib/getSiteData";
+import { getSiteData } from '../../sanity/lib/getSiteData';
 import StaticFooter from "./components/staticFooter";
 import { NavProvider } from "./context/navContext";
 

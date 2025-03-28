@@ -1,5 +1,5 @@
-import { client } from '@/sanity/lib/client';
-import { MENU_QUERY, GENERIC_QUERY} from '@/sanity/lib/queries';
+import { client } from '../../../../sanity/lib/client';
+import { MENU_QUERY, GENERIC_QUERY} from '../../../../sanity/lib/queries';
 
 export default async function Menu() {
   const menuData = await client.fetch(MENU_QUERY);

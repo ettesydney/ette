@@ -1,5 +1,5 @@
-import { client } from '@/sanity/lib/client';
-import { FUNCTIONS_QUERY } from '@/sanity/lib/queries';
+import { client } from '../../../../sanity/lib/client';
+import { FUNCTIONS_QUERY } from '../../../../sanity/lib/queries';
 import SwiperHelper from '../helpers/swiperHelper';
 import Image from 'next/image';
 
