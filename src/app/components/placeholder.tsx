@@ -20,7 +20,7 @@ export default function PlaceHolder() {
           <p className="lg:text-lg mb-8 uppercase">
             An intimate bar and restaurant nestled in the heart of the city, with a changing menu guided by quality produce and honest flavours.
           </p>
-          <p className="lg:text-lg uppercase">Opening soon</p>
+          <p className="lg:text-lg uppercase">Coming soon</p>
         </div>
       </div>
       
