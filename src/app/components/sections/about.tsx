@@ -10,7 +10,7 @@ export default async function About() {
 
   return (
     <div className="text-center bg-primarylight my-[5rem] mb-[1rem] mx-[2rem] ">
-      <div className='flex flex-col items-center justify-center gap-4 lg:gap-8 lg:pt-[3rem]'>
+      <div className='flex flex-col items-center justify-center gap-4 lg:gap-8'>
         <div>
           <h2 className="mb-2 mt-2 title">{aboutData.title}</h2>
         </div>
