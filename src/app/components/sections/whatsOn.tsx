@@ -6,8 +6,8 @@ import SwiperHelper from '../helpers/swiperHelper';
 export default async function WhatsOn() {
   const whatsOnData = await client.fetch(WHATS_ON_QUERY);
 
-  if (!whatsOnData) {
-    return <p className="text-center text-red-500">No events found.</p>;
+  if (!whatsOnData.events) {
+    return <></>
   }
 
   return (

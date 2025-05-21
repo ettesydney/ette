@@ -11,8 +11,6 @@ type HeaderLogoProps = {
 }
 
 export default function HeaderLogo( { imageData }: HeaderLogoProps) {
-  console.log('imageData', imageData);
-
   return (
     <div className="logo w-1/4 pl-4 pt-[18px] z-[11] lg:text-left max-w-[150px]">
       <ImageHelper 
