@@ -30,6 +30,10 @@ export const MENU_QUERY = `*[_type == "menu"][0] {
     blurb
   },
   menuBlurb,
+  starterSections[] {
+    title,
+    items
+  },
   sections[] {
     title,
     items

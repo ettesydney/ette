@@ -38,6 +38,29 @@ export default defineType({
       type: 'text',
     }),
     defineField({
+      name: 'starterSections',
+      title: 'Starter Menu Sections',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'title',
+              title: 'Section Title',
+              type: 'string',
+            }),
+            defineField({
+              name: 'items',
+              title: 'Menu Items',
+              type: 'array',
+              of: [{ type: 'string' }],
+            }),
+          ],
+        },
+      ],
+    }),
+    defineField({
       name: 'sections',
       title: 'Menu Sections',
       type: 'array',
