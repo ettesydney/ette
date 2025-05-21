@@ -21,13 +21,13 @@ export default async function Menu() {
       </div>
       
 
-      {/* Menu Sections */}
+      {/* Starter Menu Sections */}
         {menuData.starterSections?.map((section: any, index: number) => (
         <div key={index} className="mb-6 max-w-2xl">
           <h3 className="mb-2">{section.title}</h3>
           <ul className="">
             {section.items?.map((item: string, itemIndex: number) => (
-                <li key={itemIndex} className="mb-1">{item === 'blank' ? '\u00A0' : item}</li> 
+                <li key={itemIndex} className="mb-1">{item === 'blank' ? <br/> : item}</li> 
             ))}
           </ul>
         </div>
