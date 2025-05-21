@@ -1,12 +1,8 @@
 import { client } from '@/sanity/lib/client';
 import { ABOUT_QUERY } from '@/sanity/lib/queries';
-import ImageHelper from '../helpers/imageHelper';
 
 export default async function About() {
   const aboutData = await client.fetch(ABOUT_QUERY);
-
-
-  // console.log('about data', aboutData)
 
   if (!aboutData) {
     return <p className="text-center text-red-500">No about data found.</p>;

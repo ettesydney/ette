@@ -8,7 +8,6 @@ import { NavProvider } from "./context/navContext";
 
 export async function generateMetadata(): Promise<Metadata> {
   const siteData = await getSiteData();
-  console.log(siteData)
 
   return {
     title: siteData?.metaTitle || "ette sydney",

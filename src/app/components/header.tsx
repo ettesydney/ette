@@ -15,6 +15,7 @@ type HeaderProps = {
       };
       alt?: string;
     };
+    bookNowLink?: string;
   };
 };
 

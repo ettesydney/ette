@@ -5,7 +5,6 @@ export default async function Menu() {
   const menuData = await client.fetch(MENU_QUERY);
   const siteData = await client.fetch(GENERIC_QUERY)
   
-
   if (!menuData) {
     return <p className="text-center text-red-500">No menu data found.</p>;
   }

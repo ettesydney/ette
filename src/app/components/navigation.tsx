@@ -14,12 +14,15 @@ type SiteInfoProps = {
     phone: string;
     instagram: string;
     facebook: string;
+    bookNowLink: string;
+    
   };
 };
 
 export default function Navigation({ siteData }: SiteInfoProps) {
   const { isNavOpen, toggleNav, closeNav } = useNav(); // Use NavContext
 
+  console.log('ss', siteData.bookNowLink)
   // Navigation items array
   const navItems = [
     { name: "About", href: "#about" },
@@ -80,7 +83,7 @@ export default function Navigation({ siteData }: SiteInfoProps) {
               </li>
             ))}
             <li className="flex items-center justify-center text-center">
-              <a href={"#"} className="px-4 py-2 border w-[200px]" style={{ borderColor: 'var(--bg-primary)' }} onClick={closeNav}>
+              <a href={siteData.bookNowLink} className="px-4 py-2 border w-[200px]" style={{ borderColor: 'var(--bg-primary)' }} onClick={closeNav}>
                 Book
               </a>
             </li>
@@ -131,7 +134,7 @@ export default function Navigation({ siteData }: SiteInfoProps) {
                 </li>
               ))}
               <li className="px-4 py-2 border w-[100px] text-center">
-                <a href={"#"} target='_blank'>Book</a>
+                <a href={siteData.bookNowLink} target='_blank'>Book</a>
               </li>
             </ul>
           </div>
