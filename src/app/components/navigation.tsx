@@ -21,7 +21,6 @@ type SiteInfoProps = {
 export default function Navigation({ siteData }: SiteInfoProps) {
   const { isNavOpen, toggleNav, closeNav } = useNav(); // Use NavContext
 
-  console.log('ss', siteData.bookNowLink)
   // Navigation items array
   const navItems = [
     { name: "About", href: "#about" },

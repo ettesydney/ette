@@ -18,6 +18,19 @@ export default async function Menu() {
         <p className="mb-6">{menuData.menuBlurb}</p>
       </div>
       
+
+      {/* Menu Sections */}
+        {menuData.sections?.slice(0, 1).map((section: any, index: number) => (
+        <div key={index} className="mb-6 max-w-2xl">
+          <h3 className="mb-2">{section.title}</h3>
+          <ul className="">
+            {section.items?.map((item: string, itemIndex: number) => (
+                <li key={itemIndex} className="mb-1">{item === 'blank' ? '\u00A0' : item}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+      
       {/* Menu Title */}
       <div className='lg:mb-[1rem]'>
         {menuData.title.map((item: { title: string; blurb: string }, index: number) => (
@@ -28,8 +41,7 @@ export default async function Menu() {
         ))}
       </div>
 
-      {/* Menu Sections */}
-      {menuData.sections?.map((section: any, index: number) => (
+      {menuData.sections?.slice(1).map((section: any, index: number) => (
         <div key={index} className="mb-6 max-w-2xl">
           {/* Section Title */}
           <h3 className="mb-2">{section.title}</h3>
