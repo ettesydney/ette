@@ -1,16 +1,28 @@
-// src/app/page.tsx (Home page - remains a server component)
-import { client } from '@/sanity/lib/client';
-import { HOMEPAGE_QUERY } from '@/sanity/lib/queries';
-import { HomepageData } from '@/types/homepage';
-import PlaceHolder from './components/placeholder';
+import About from './components/sections/about';
+import Functions from './components/sections/functions';
+import Intro from './components/sections/intro';
+import Menu from './components/sections/menu';
+import WhatsOn from './components/sections/whatsOn';
 
-
-export default async function Home() {
-  const homepageData: HomepageData = await client.fetch(HOMEPAGE_QUERY);
+export default function Home() {
 
   return (
-    <div className="h-dvh home w-full">
-     <PlaceHolder />
+    <div className="site-bg w-full">
+      <section className='h-dvh dark-section'>
+        <Intro />
+      </section>
+      <section id='about' className='pt-[3rem]'>
+        <About />
+      </section>
+      <section id='menu' className='pt-[3rem]'>
+        <Menu />
+      </section>
+      <section id='functions'  className='pt-[3rem]'>
+        <Functions />
+      </section>
+      <section  id='whats-on'  className='pt-[3rem]'>
+        <WhatsOn />
+      </section>
     </div>
   );
 }

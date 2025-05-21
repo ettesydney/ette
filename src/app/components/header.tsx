@@ -1,15 +1,30 @@
-"use client"; // Add this to make it a client component
+import HeaderLogo from "./headerLogo";
+import Navigation from "./navigation";
 
 
-import { usePathname } from "next/navigation";
+type HeaderProps = {
+  siteData: {
+    address: string;
+    email: string;
+    phone: string;
+    instagram: string;
+    facebook: string;
+    headerLogo?: {
+      asset?: {
+        url: string;
+      };
+      alt?: string;
+    };
+    bookNowLink?: string;
+  };
+};
 
-export default function Header() {
-
+export default function Header({ siteData }: HeaderProps) {
   return (
-    <div className="header absolute w-full z-10 top-0">
-      <div className="grid grid-cols-12 items-center p-4">
-        {/* Logo */}
-       HEADER
+    <div className="header flex justify-between absolute w-full">
+      <HeaderLogo imageData={siteData.headerLogo || { asset: { url: "" }, alt: "Ette header logo" }}/>
+      <div className="self-start">
+      <Navigation siteData={siteData} />
       </div>
     </div>
   );

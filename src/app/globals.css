@@ -1,3 +1,4 @@
+@import url("https://cdn.skypack.dev/sanitize.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,15 +11,28 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'GT Alpina Extended Thin Italic';
+  src: url('/fonts/GT-Alpina-Extended-Thin-Italic.woff2') format('woff2'),
+       url('/fonts/GT-Alpina-Extended-Thin-Italic.woff') format('woff'),
+       url('/fonts/GT-Alpina-Extended-Thin-Italic.ttf') format('truetype'),
+       url('/fonts/GT-Alpina-Extended-Thin-Italic.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* Root Variables */
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --text-color: #000;
+  --text-color: #352E2E;
   --background-color: #fff;
   --bg-primary: #352E2E;
   --primary: #fce7f2;
+  --primary-light: #FDF2F8;
+  --dark-background: #352E2E;
+  --inverse-background: #03170d;
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,6 +41,20 @@
     --foreground: #ededed;
   }
 }
+
+@keyframes fade-near-end {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+*, html {
+  scroll-behavior: smooth !important;
+}
+
 
 /* Apply Custom Font */
 html, body {
@@ -37,12 +65,48 @@ html, body {
   overflow-x: hidden;
   font-family: 'MaisonNeueExtended', Arial, Helvetica, sans-serif;
   letter-spacing: 0.2em;
-  font-size: 0.9em;
-
+  font-size: 0.9rem;
+  text-transform: uppercase;
 }
 
-.home {
-  background-color: #352E2E;
+
+button, .button {
+  background: transparent ;
+  border-color: var(--primary);
+  border: 1px solid;
+  border-radius: 0;
+  text-transform: uppercase;
+}
+
+.dark-button {
+  background: var(--dark-background);
+  color: var(--primary);
+  border-color: var(--dark-background);
+  border: 1px solid;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-dark {
+  color: var(--bg-primary);
+  fill: var(--bg-primary);
+}
+
+.text-dark svg {
+  fill: var(--bg-primary);
+}
+
+.site-bg {
+  background-color: var(--primary-light);
+}
+
+.dark-bg {
+  background-color: var(--dark-background);
+}
+.inverse-bg {
+  background-color: var(--inverse-background);
 }
 
 .svg-color {
@@ -51,9 +115,217 @@ html, body {
   stroke: currentColor;
 }
 
+.logo {
+  mix-blend-mode: difference;
+  fill: #fce7f2;
+}
+
+.next-div-full > div {
+  width: 100%;
+  height:100%
+}
+
+.sneak-logo {
+  position: sticky;
+  top: 1px;
+  left: 2rem;
+  z-index: 10;
+  height:0;
+  width:100%;
+  animation: fade-near-end linear forwards;
+  animation-timeline: scroll(block);
+  animation-range: 15% 20%;
+}
+
+
+
+.sneak-logo > svg {
+  fill: #03170d;
+  position: absolute;
+  left: 1rem;
+  z-index: 40;
+  width: 135px;
+}
+
+.title {
+  font-family: 'GT Alpina Extended Thin Italic';
+  text-transform: initial;
+  letter-spacing: 0rem;
+  font-size: 3.5rem;
+
+}
+
+h3.title {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
 
 .custom-box-border {
   border: 1px solid var(--primary);
   padding: 2px;
   max-width: 200px
+}
+
+
+/* Custom Mobile menu */
+
+.menu-icon {
+  z-index: 10;
+  /* position: relative; */
+}
+
+.menu-icon span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #fce7f2;
+  border-radius: 1px;
+}
+
+.menu-icon span:first-of-type {
+  top: 0;
+}
+.menu-icon span:last-of-type {
+  bottom: 0;
+}
+
+/* Add color transition to open state */
+.menu-icon .menu-icon__cheeckbox.open + div span,
+.menu-icon__cheeckbox.open span {
+  background-color: #000; /* Change to black when open */
+}
+
+.menu-icon .menu-icon__cheeckbox.open + div span:first-of-type,
+.menu-icon__cheeckbox.open span:first-of-type {
+  transform: rotate(45deg);
+  top: 5.5px;
+}
+
+.menu-icon__cheeckbox.open span:last-of-type {
+  transform: rotate(-45deg);
+  bottom: 9px;
+}
+
+.menu-icon__cheeckbox.open span:first-of-type,
+.menu-icon__cheeckbox.open span:last-of-type {
+  width: 26px;
+}
+
+/* fix logo transition */
+@media (max-height: 1200px) {
+  .sneak-logo {
+    animation-range: 5% 20%;
+  }
+}
+@media (max-height: 1100px) {
+  .sneak-logo {
+    animation-range: 5% 18%;
+  }
+}
+@media (max-height: 1000px) {
+  .sneak-logo {
+    animation-range: 5% 17%;
+  }
+}
+@media (max-height: 900px) {
+  .sneak-logo {
+    animation-range: 5% 16%;
+  }
+}
+@media (max-height: 900px) {
+  .sneak-logo {
+    animation-range: 5% 16%;
+  }
+}
+@media (max-height: 850px) {
+  .sneak-logo {
+    animation-range: 5% 15%;
+  }
+}
+@media (max-height: 800px) {
+  .sneak-logo {
+    animation-range: 5% 14%;
+  }
+}
+@media (max-height: 750px) {
+  .sneak-logo {
+    animation-range: 5% 13%;
+  }
+}
+@media (max-height: 700px) {
+  .sneak-logo {
+    animation-range: 5% 12%;
+  }
+}
+@media (max-height: 650px) {
+  .sneak-logo {
+    animation-range: 5% 11%;
+  }
+}
+@media (max-height: 600px) {
+  .sneak-logo {
+    animation-range: 5% 10%;
+  }
+}
+@media (max-height: 550px) {
+  .sneak-logo {
+    animation-range: 5% 9%;
+  }
+}
+@media (max-height: 500px) {
+  .sneak-logo {
+    animation-range: 5% 8%;
+  }
+}
+@media (max-height: 450px) {
+  .sneak-logo {
+    animation-range: 5% 7%;
+  }
+}
+@media (max-height: 400px) {
+  .sneak-logo {
+    animation-range: 5% 6%;
+  }
+}
+
+
+@media (max-width: 768px) {
+  /* Custom styles for medium screens and up */
+  .title{
+    font-size: 2.5rem;
+  }
+  h3.title{
+    font-size: 1.5rem;
+  }
+  body {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo > img, .sneak-logo > svg {
+    width: 100px;
+  }
+  .sneak-logo > svg {
+    top: -9px;
+  }
+}
+
+@media (max-width: 470px) {
+  .logo > img, .sneak-logo > svg {
+    width: 80px;
+  }
+  .sneak-logo > svg {
+    top: -14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .logo > img, .sneak-logo > svg {
+    width: 60px;
+  }
+  .sneak-logo > svg {
+    top: -18px;
+  }
 }

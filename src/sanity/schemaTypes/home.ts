@@ -1,33 +1,36 @@
-import { defineType } from 'sanity';
+import { defineField, defineType, DocumentDefinition } from 'sanity';
 
-export const home = defineType({
-  name: 'home', 
+interface CustomDocumentDefinition extends DocumentDefinition {
+  __experimental_actions?: string[];
+}
+
+export default defineType({
+  name: 'home',
   title: 'Home',
   type: 'document',
+  __experimental_actions: ['update', 'publish'], // Prevents "Create" & "Delete"
   fields: [
-    {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-    },
-    {
-      name: 'imageGallery',
-      title: 'Image Gallery',
-      type: 'array',
+    defineField({
+      name: 'primaryImages',
+      title: 'Primary Images',
+      type: 'array', // Make it an array to allow multiple images
       of: [
         {
           type: 'image',
-          options: { hotspot: true },
-          fields: [
-            {
-              name: 'alt',
-              title: 'Alt Text',
-              type: 'string',
-              options: { isHighlighted: true },
-            },
-          ],
+          options: { hotspot: true }, // Enable hotspot for each image
         },
       ],
-    },
+    }),
+    defineField({
+      name: 'mobileImage',
+      title: 'Mobile Image',
+      type: 'image',
+      options: { hotspot: true },
+    }),
+    defineField({
+      name: 'blurb',
+      title: 'Blurb',
+      type: 'text',
+    }),
   ],
-});
+} as CustomDocumentDefinition);
