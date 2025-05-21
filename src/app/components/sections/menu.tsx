@@ -38,8 +38,7 @@ export default async function Menu() {
           {/* Menu Items */}
           <ul className="">
             {section.items?.map((item: string, itemIndex: number) => (
-                <li key={itemIndex} className="mb-1">{item === 'blank' ? '\u00A0' : item}</li>
-              
+              <li key={itemIndex} className="mb-1">{item === 'blank' ? '\u00A0' : item}</li>
             ))}
           </ul>
         </div>
