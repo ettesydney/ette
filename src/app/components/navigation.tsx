@@ -14,8 +14,7 @@ type SiteInfoProps = {
     phone: string;
     instagram: string;
     facebook: string;
-    bookNowLink: string;
-    
+    bookNowLink?: string;
   };
 };
 

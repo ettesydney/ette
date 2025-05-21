@@ -22,7 +22,7 @@ type HeaderProps = {
 export default function Header({ siteData }: HeaderProps) {
   return (
     <div className="header flex justify-between absolute w-full">
-      <HeaderLogo imageData={siteData.headerLogo || { asset: { url: "" }, alt: "" }}/>
+      <HeaderLogo imageData={siteData.headerLogo || { asset: { url: "" }, alt: "Ette header logo" }}/>
       <div className="self-start">
       <Navigation siteData={siteData} />
       </div>
