@@ -11,7 +11,7 @@ export default async function Functions() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center text-center mx-[2rem] mt-[3rem] lg:mt-[10rem]" >
+    <div className="flex flex-col items-center justify-center text-center mx-[2rem] my-[3rem] lg:my-[10rem]" >
       {/* Function Sections */}
       {functionsData.sections?.map((section: any, index: number) => (
         <div key={index} className="w-full mt-[2rem] md:mt-0"> {/* Full width container */}
