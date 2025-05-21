@@ -2,6 +2,7 @@
 
 import ImageHelper from "./helpers/imageHelper";
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 interface WhatsOnCardProps {
   date: string;
@@ -62,7 +63,7 @@ export default function WhatsOnCard({ date, title, blurb, image, callToAction, c
               <p
                 className="mt-2 button text-primary px-4 py-2 w-[200px]"
                 >
-                View details
+                {callToActionText || 'View details'}
               </p>
             </div>
               )}
@@ -75,7 +76,7 @@ export default function WhatsOnCard({ date, title, blurb, image, callToAction, c
                 rel="noopener noreferrer"
                 className="mt-2 button text-primary px-4 py-2 w-[200px]"
               >
-                {callToActionText ? callToActionText : 'View details'}
+                {callToActionText || 'View details'} {/* problem zone, always shows view details */}
               </a>
             </div>
           )}
