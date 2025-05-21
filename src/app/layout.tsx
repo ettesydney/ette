@@ -7,7 +7,7 @@ import StaticFooter from "./components/staticFooter";
 import { NavProvider } from "./context/navContext";
 
 export const metadata: Metadata = {
-  title: "ette Sydney",
+  title: "ette sydney",
   description: "ette is open at 10 Bridge St. Sydney 2000. Sign up for updates and follow us on Instagram.",
   
 };

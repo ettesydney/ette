@@ -90,6 +90,8 @@ export const GENERIC_QUERY = `*[_type == "generic"][0] {
       url
     }
   },
+  metaTitle,
+  metaDescription,
   bookNowLink,
   subscribeLink,
   instagram,

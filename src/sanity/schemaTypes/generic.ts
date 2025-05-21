@@ -64,6 +64,16 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'metaTitle',
+      title: 'Meta Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'metaDescription',
+      title: 'Meta Description',
+      type: 'string',
+    }),
+    defineField({
       name: 'hours',
       title: 'Business Hours',
       type: 'array',
