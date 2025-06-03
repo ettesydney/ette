@@ -1,8 +1,19 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is the production GitRepo for ettesydney.com
+
+This is a nextjs project with a Sanity backend deployed on netlify.
+
+The site owner is:
+michael@ettesydney.com.au
 
 ## Getting Started
 
-First, run the development server:
+Install
+
+```bash
+yarn install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -13,6 +24,12 @@ pnpm dev
 # or
 bun dev
 ```
+
+Pushing to the repo will automatically buld on netlify.
+
+Changes on sanity will require a rebuild, there is a deployment tab inside of sanity to run this.
+
+## Extra info:
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
